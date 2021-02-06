@@ -89,7 +89,7 @@ After logged in, users are brought to home page with a number of options availab
 
 - Leaderboard view.
 Represents a list of all users with theis score - total number of answers. Cards are sorted by top score.
-
+    
     Fields:
     -- username
     -- avatar
