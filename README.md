@@ -19,6 +19,7 @@ Using the provided starter code, you'll build a React/Redux front end for the ap
 - Login view
 
 First, users needs to login, using one of the user profiles available, drop-down on search. Suppose user was allready registered.
+
     Fields:
     -- username (drop-down)
     -- password
