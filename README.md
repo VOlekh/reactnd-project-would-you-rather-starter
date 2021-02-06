@@ -6,6 +6,109 @@ The `_DATA.js` file represents a fake database and methods that let you access t
 
 Using the provided starter code, you'll build a React/Redux front end for the application. We recommend using the [Create React App](https://github.com/facebook/create-react-app) to bootstrap the project.
 
+
+## Views we need in our app:
+- Home
+- New Questions
+- Leader Board
+- Registration
+- Login
+
+## View Into a Hierarchy of Components
+
+- Login view
+
+First, users needs to login, using one of the user profiles available, drop-down on search. Suppose user was allready registered.
+    Fields:
+    -- username (drop-down)
+    -- password
+
+    Components:
+    -- app
+    -- nav
+    -- login card    
+
+
+
+- Home view.
+
+After logged in, users are brought to home page with a number of options available.
+
+    - Unanswered questions: 
+    This includes all not answered question by the logged in user. By clicking on one of these question, user is asked to select option A or B. After submit card with question moves to answered questions tab.
+
+    Fields:
+    -- username
+    -- avatar
+    -- question
+    -- answer A
+    -- answer B
+    -- submit button
+
+    - Answered quetions: 
+    This page has questions that were answered by the logged in user. Answers are blocked to changes.
+
+    Fields:
+    -- username
+    -- avatar
+    -- question
+    -- answer A
+    -- percent
+    -- number of users answered out of total 
+    -- answer B
+    -- percent
+    -- number of users answered out of total
+    -- details button
+
+    Components:
+    -- app
+    -- nav
+    -- Answered/Unanswered quetions
+    -- user/question card
+    -- user/question list (sorted by number of answers)
+
+
+
+- New question view.
+
+ User is provided with a form to create a question. Upon submitting a question, the user is carried to Unanswered questions page.
+
+    Fields:
+    -- create new question header
+    -- question
+    -- answer A
+    -- answer B
+    -- submit button
+
+    Components:
+    -- app
+    -- nav
+    -- user/new question card
+
+
+- Leaderboard view.
+Represents a list of all users with theis score - total number of answers. Cards are sorted by top score.
+
+    Fields:
+    -- username
+    -- avatar
+    -- answered questions
+    -- number of aq
+    -- created questions
+    -- number of cq
+    -- score
+
+    Components:
+    -- app
+    -- nav
+    -- user rating card list (sorted by number of answers)
+    -- user/rating question card
+
+- Logout view.
+ User logout of the app and is brought to login page.
+
+
+
 ## Data
 
 There are two types of objects stored in our database:
