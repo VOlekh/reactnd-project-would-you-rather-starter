@@ -7,7 +7,7 @@ The `_DATA.js` file represents a fake database and methods that let you access t
 Using the provided starter code, you'll build a React/Redux front end for the application. We recommend using the [Create React App](https://github.com/facebook/create-react-app) to bootstrap the project.
 
 
-## Views we need in our app:
+## Views we need in our app
 - Home
 - New Questions
 - Leader Board
@@ -35,8 +35,9 @@ First, users needs to login, using one of the user profiles available, drop-down
 
 After logged in, users are brought to home page with a number of options available.
 
-    - Unanswered questions: 
-    This includes all not answered question by the logged in user. By clicking on one of these question, user is asked to select option A or B. After submit card with question moves to answered questions tab.
+Unanswered questions:
+
+This includes all not answered question by the logged in user. By clicking on one of these question, user is asked to select option A or B. After submit card with question moves to answered questions tab.
 
     Fields:
     -- username
@@ -46,8 +47,9 @@ After logged in, users are brought to home page with a number of options availab
     -- answer B
     -- submit button
 
-    - Answered quetions: 
-    This page has questions that were answered by the logged in user. Answers are blocked to changes.
+Answered questions:
+
+This page has questions that were answered by the logged in user. Answers are blocked to changes.
 
     Fields:
     -- username
@@ -60,6 +62,8 @@ After logged in, users are brought to home page with a number of options availab
     -- percent
     -- number of users answered out of total
     -- details button
+
+Components for Unanswered/Answered questions
 
     Components:
     -- app
@@ -88,8 +92,9 @@ After logged in, users are brought to home page with a number of options availab
 
 
 - Leaderboard view.
+
 Represents a list of all users with theis score - total number of answers. Cards are sorted by top score.
-    
+
     Fields:
     -- username
     -- avatar
@@ -106,8 +111,8 @@ Represents a list of all users with theis score - total number of answers. Cards
     -- user/rating question card
 
 - Logout view.
- User logout of the app and is brought to login page.
 
+ User logout of the app and is brought to login page.
 
 
 ## Data
