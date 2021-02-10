@@ -2,10 +2,15 @@
 
 This is the starter code for the final assessment project for Udacity's React & Redux course.
 
+For this application, most of the application’s state should be managed by Redux.
+There should be no direct API calls in components’ lifecycle methods, and updates should be triggered by dispatching action creators. You may use component state to handle form input fields and controlled components. Otherwise, the rest of the state for your application should be controlled by your reducers.
+
 The `_DATA.js` file represents a fake database and methods that let you access the data. The only thing you need to edit in the ` _DATA.js` file is the value of `avatarURL`. Each user should have an avatar, so you’ll need to add the path to each user’s avatar.
 
 Using the provided starter code, you'll build a React/Redux front end for the application. We recommend using the [Create React App](https://github.com/facebook/create-react-app) to bootstrap the project.
 
+use source to plan project 
+https://redux.js.org/tutorials/fundamentals/part-3-state-actions-reducers
 
 ## Views we need in our app
 - Home
@@ -33,13 +38,14 @@ First, users needs to login, using one of the user profiles available, drop-down
 
 - Home view.
 
-After logged in, users are brought to home page with a number of options available.
+ Once the user logs in, the user should be able to toggle between his/her answered and unanswered polls on the home page, which is located at the root. The polls in both categories are arranged from the most recently created (top) to the least recently created (bottom). The name of the logged in user should be visible on the page. The application should show a 404 page if the user is trying to access a poll that does not exist. (Please keep in mind that newly created polls will not be accessible at their url because of the way the backend is set up in this application.)
 
 Unanswered questions:
 
-This includes all not answered question by the logged in user. By clicking on one of these question, user is asked to select option A or B. After submit card with question moves to answered questions tab.
+This includes all not answered question by the logged in user. The unanswered questions should be shown by default. By clicking on one of these question, user is asked to select option A or B. After submit card with question moves to answered questions tab.
 
     Fields:
+    -- Text “Would You Rather”
     -- username
     -- avatar
     -- question
@@ -49,9 +55,10 @@ This includes all not answered question by the logged in user. By clicking on on
 
 Answered questions:
 
-This page has questions that were answered by the logged in user. Answers are blocked to changes.
+This page has questions that were answered by the logged in user. Answers are blocked to changes.Each polling question should link to the details of that poll. The details of each poll should be available at questions/:question_id.
 
     Fields:
+    -- Text “Would You Rather”
     -- username
     -- avatar
     -- question
@@ -63,18 +70,20 @@ This page has questions that were answered by the logged in user. Answers are bl
     -- number of users answered out of total
     -- details button
 
-Components for Unanswered/Answered questions
+Components for Unanswered/Answered questions. 
 
     Components:
     -- app
     -- nav
     -- Answered/Unanswered quetions
     -- user/question card
-    -- user/question list (sorted by number of answers)
+    -- user/question list (sorted by date)
 
-
+- Question details view.
+TBD
 
 - New question view.
+ /add route
 
  User is provided with a form to create a question. Upon submitting a question, the user is carried to Unanswered questions page.
 
@@ -92,6 +101,7 @@ Components for Unanswered/Answered questions
 
 
 - Leaderboard view.
+/leaderboard route
 
 Represents a list of all users with theis score - total number of answers. Cards are sorted by top score.
 
