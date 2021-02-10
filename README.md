@@ -136,8 +136,16 @@ Answer question
 Show details of the question
 logout
 
+Once you defined actions you need to get information from db.
+Define one main action - shared.js write thunk action creator
+import data from db or api and all the actions 
 
-
+dispatch initial data to functions
+           
+# Reducers
+A Reducer describes how an application's state changes, a reducer must return a new object.
+For example the result of a questions action going through its questions reducers
+Al reducers should be combined in to one root reducer which will combine the results of calling the questions reducer, users reducer, and authedUser reducer into a single state object. Remember, we need to do this because the createStore function only accepts a single reducer.
 ## Data
 
 There are two types of objects stored in our database:

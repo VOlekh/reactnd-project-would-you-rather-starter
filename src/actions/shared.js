@@ -13,7 +13,7 @@ export function HamdleInitialData () {
         .then(({questions, users}) => {
             dispatch(receiveQuestions(questions));
             dispatch(receiveUsers(users));
-            dispatch(setAuthedUser(AUTHED_ID));
+            dispatch(setAuthedUser(id));
         })
     }
 }
