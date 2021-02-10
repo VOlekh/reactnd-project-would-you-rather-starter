@@ -1,4 +1,4 @@
-export const RECEIVE_QUESTIONS = 'RECEIVE_QUESTIONS'
+export const SET_AUTHED_USER = 'SET_AUTHED_USER'
 export function setAuthedUser (id) {
     
     return{
