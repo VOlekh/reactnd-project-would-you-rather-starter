@@ -137,15 +137,34 @@ Show details of the question
 logout
 
 Once you defined actions you need to get information from db.
-Define one main action - shared.js write thunk action creator
-import data from db or api and all the actions 
-
-dispatch initial data to functions
+Define one main action - shared.js write thunk action creator.
+Import data from db or api and all the actions .
+Dispatch initial data to functions
            
 # Reducers
 A Reducer describes how an application's state changes, a reducer must return a new object.
-For example the result of a questions action going through its questions reducers
-Al reducers should be combined in to one root reducer which will combine the results of calling the questions reducer, users reducer, and authedUser reducer into a single state object. Remember, we need to do this because the createStore function only accepts a single reducer.
+For example the result of a questions action going through its questions reducers.
+
+1. For every reducer initialize the state inside the store: include a default state parameter as the first argument inside a particular reducer function.
+
+For example:
+function tweets (state = {}, action) { }
+
+2. All reducers should be combined in to one root reducer in index.js which will combine the results of calling the questions reducer, users reducer, and authedUser reducer into a single state object. Remember, we need to do this because the createStore function only accepts a single reducer.
+Initialize the state inside the store: pass the initial state (or a part of the initial state) as preloadedState to the createStore function.
+
+For example:
+const store = createStore (
+  rootReducer,
+  { tweets: {} }
+);
+3. Now that all of our reducers are set up, we need to actually create the store and provide it to our application. To actually use any of the code that we've written up to this point, we need to install the redux package. Then, to provide the store to our application, we'll also need to install the react-redux package.
+
+So install these packages and then restart your terminal:
+
+yarn add react-redux redux
+
+
 ## Data
 
 There are two types of objects stored in our database:
