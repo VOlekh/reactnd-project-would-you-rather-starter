@@ -11,5 +11,4 @@ export default function questions (state = null, action) {
         default:
           return state;
       }
-
 }
