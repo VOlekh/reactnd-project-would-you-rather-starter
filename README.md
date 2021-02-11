@@ -163,6 +163,10 @@ const store = createStore (
 So install these packages and then restart your terminal:
 
 yarn add react-redux redux
+is the same as 2 comands
+npm add react-redux
+npm add redux
+
 
 
 ## Data
