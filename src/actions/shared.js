@@ -1,12 +1,14 @@
-import {_getQuestions, _getUsers} from '../utils/_DATA';
+import { getInitialData } from '../utils/api'
 import {receiveUsers} from '../actions/users'
 import {receiveQuestions} from '../actions/questions'
 import {setAuthedUser} from '../actions/authedUser'
 
-const AUTHED_ID = 'johndoe'
+const AUTHED_ID = 'johndoe' 
+getInitialData()
 
 //thunk action creator 
-export function HamdleInitialData () {
+export function handleInitialData () {
+    
     //Now, we need to give our components access to the data that came in from _DATA.js
     return (dispatch) =>{
         return getInitialData()

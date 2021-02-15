@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { HamdleInitialData } from "../actions/shared";
+import { handleInitialData } from "../actions/shared";
 
 class App extends Component {
   componentDidMount() {
-    this.props.dispatch(HamdleInitialData());
+    this.props.dispatch(handleInitialData());
   }
 
   render() {
