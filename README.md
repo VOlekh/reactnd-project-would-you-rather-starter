@@ -158,6 +158,9 @@ const store = createStore (
   rootReducer,
   { tweets: {} }
 );
+
+
+# Store
 3. Now that all of our reducers are set up, we need to actually create the store and provide it to our application. To actually use any of the code that we've written up to this point, we need to install the redux package. Then, to provide the store to our application, we'll also need to install the react-redux package.
 
 So install these packages and then restart your terminal:
@@ -167,7 +170,26 @@ is the same as 2 comands
 npm add react-redux
 npm add redux
 
+then import in main index.js 
+import {createStore} from 'redux'
+import {Provider} from 'react-redux'
 
+# Middleware
+add redux-thunk
+
+All middleware follows this currying pattern:
+
+const logger = (store) => (next) => (action) => {
+ // ...
+}
+
+Hook up our redux-thunk middleware, so our thunk action creators actually work. We’ll also put in logger middleware to make debugging easier
+
+# Initialize the App's Data
+Whan we created all different actions that need to be dispatched and set up reducers which will handle this dispatches nexst step is to invoke handleInitialData from  actions/shared.js whan app loads
+
+# build ui
+Dashboard
 
 ## Data
 
