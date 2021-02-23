@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { formatDate, formatQuestion } from '../utils/helper'
+import {RadioGroup, RadioButton} from 'react-radio-buttons'
 
 class Question extends Component{
     render(){
@@ -15,11 +16,29 @@ class Question extends Component{
                 alt = {`Avatar of ${name}`}
                 className='avatar'
                 />
+                
                 <div className='question-info'>
+                    
                     <span>{name}</span>
                     <span> {formatDate(timestamp)}</span>
-                    <div>{optionOne.text}</div>
-                    <div>{optionTwo.text}</div>
+                
+                    <h3>Would you rather ...</h3>
+                    <RadioGroup onChange={ this.onChange } vertical>
+                        <RadioButton value= "optionOne" >
+                          {optionOne.text}
+                        </RadioButton>
+                        <RadioButton value="optionTwo" >
+                          {optionTwo.text}
+                        </RadioButton>
+                    </RadioGroup>
+
+                <button
+                    className='btn'
+                    type='submit'>
+                     {/* //TBD: disabled if the radio button is not checked
+                    //disabled={ value === false}> */}
+                    Submit
+                </button>
 
                 </div>
             </div>

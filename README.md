@@ -188,8 +188,10 @@ Hook up our redux-thunk middleware, so our thunk action creators actually work. 
 # Initialize the App's Data
 Whan we created all different actions that need to be dispatched and set up reducers which will handle this dispatches nexst step is to invoke handleInitialData from  actions/shared.js whan app loads
 
-# build ui
+# Build ui
 Dashboard
+
+# Connect components to the store
 
 ## Data
 
