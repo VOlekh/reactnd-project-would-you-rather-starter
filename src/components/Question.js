@@ -10,6 +10,7 @@ class Question extends Component{
         const {
             name, avatar, timestamp, optionOne, optionTwo } = question
         return(
+            
             <div className='question'>
                 <img 
                 src = {avatar}
@@ -23,7 +24,7 @@ class Question extends Component{
                     <span> {formatDate(timestamp)}</span>
                 
                     <h3>Would you rather ...</h3>
-                    <RadioGroup onChange={ this.onChange } vertical>
+                    <RadioGroup onChange={ this.onChange } horisontal>
                         <RadioButton value= "optionOne" >
                           {optionOne.text}
                         </RadioButton>
@@ -35,8 +36,9 @@ class Question extends Component{
                 <button
                     className='btn'
                     type='submit'>
-                     {/* //TBD: disabled if the radio button is not checked
-                    //disabled={ value === false}> */}
+                     {/* //TBD: disabled if the radio button is not checked*/}
+                     {/* 'value' is not defined  no-undef
+                    disabled={ value === false} */}
                     Submit
                 </button>
 
@@ -52,6 +54,7 @@ function mapStateToProps({authedUser, users, questions}, {id}) {
     return{
         authedUser,
         question: formatQuestion(question, users[question.author], authedUser)
+      
     }
 }
 

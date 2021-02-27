@@ -2,6 +2,10 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { handleInitialData } from '../actions/shared'
 import Dashboard from './Dashboard'
+import newQuestion from './NewQuestion';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 
 class App extends Component {
   componentDidMount() {
