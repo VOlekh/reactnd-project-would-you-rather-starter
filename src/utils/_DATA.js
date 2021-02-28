@@ -171,15 +171,16 @@ export function _saveQuestion (question) {
   })
 }
 
-export function _saveQuestionAnswer ({ authedUser, qid, answer }) {
+export function _saveQuestionAnswer ({ author, qid, answer }) {
+  console.log(author);
   return new Promise((res, rej) => {
     setTimeout(() => {
       users = {
         ...users,
-        [authedUser]: {
-          ...users[authedUser],
+        [author]: {
+          ...users[author],
           answers: {
-            ...users[authedUser].answers,
+            ...users[author].answers,
             [qid]: answer
           }
         }
@@ -191,7 +192,7 @@ export function _saveQuestionAnswer ({ authedUser, qid, answer }) {
           ...questions[qid],
           [answer]: {
             ...questions[qid][answer],
-            votes: questions[qid][answer].votes.concat([authedUser])
+            votes: questions[qid][answer].votes.concat([author])
           }
         }
       }

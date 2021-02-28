@@ -15,30 +15,26 @@ export function receiveQuestions (questions) {
 }
 
 //
-export function saveAnswer ({qid, authedUser, answer}) {
-    
+export function getSaveAnswerObject ({qid, author, answer}) { 
+    console.log(author)
     return{
         type: SAVE_ANSWER,
         qid,
-        authedUser,
+        author,
         answer
     }
 }
 
-
 // asyncronouseaction creator responsible for invoking saveQuestionAnswer, dispatching (thunk action creator)
 export function handleQuestionAnswer(info) {
+    console.log(info)
     return (dispatch) => {
-        dispatch(saveAnswer(info))
-        //use optimistic update, save in to db
-        .then(() => {
-            dispatch(saveQuestionAnswer(info));
-            })
-        .catch((e) => {
-            console.warn('Error in handleQuestionAnswer: ', e);
-            alert('There was an error saving Question. Try again.');
-        });
-
+        return saveQuestionAnswer(info)
+            .then(() => dispatch(getSaveAnswerObject(info)))
+            .catch((e) => {
+                console.warn('Error in handleQuestionAnswer: ', e);
+                alert('There was an error saving Question. Try again.');
+            });
     }
     
 }
