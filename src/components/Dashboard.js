@@ -12,7 +12,7 @@ class Dashboard extends Component {
     return (
       <div className="dashboard">
         <h3 className="center">Questions Answered/Unanswered</h3>
-        <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example">
+        <Tabs defaultActiveKey="profile" id="HomePage">
             
           <Tab eventKey="Unanswered" title="unanswered">
             <div label="Unanswered">

@@ -64,14 +64,14 @@ class newQuestion extends Component {
             value={optionOne}
             // when input fild changes
             onChange={this.handleChange}
-            className="answerarea"
+            className="answered"
             maxLength={100}
           />
           <textarea
             placeholder="Option two"
             value={optionTwo}
             onChange={this.handleChange}
-            className="answerarea"
+            className="answered"
             maxLength={100}
           />
           {/* when the text is more then 100 show how much is left */}

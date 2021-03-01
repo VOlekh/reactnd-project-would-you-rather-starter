@@ -2,10 +2,14 @@ import React, { Component, Fragment  } from 'react'
 import { Route, BrowserRouter as Router,} from 'react-router-dom'
 import { connect } from 'react-redux'
 import { handleInitialData } from '../actions/shared'
-import Dashboard from './Dashboard'
-import newQuestion from './NewQuestion';
+
 import Nav from './Nav'
-import NewQuestion from './NewQuestion';
+import Dashboard from './Dashboard'
+import NewQuestion from './NewQuestion'
+import Leaderboard from './Leaderboard'
+import Login from './Login'
+import Logout from './Logout'
+import QuestionDetails from './QuestionDetails';
 
 
 
@@ -13,6 +17,9 @@ class App extends Component {
   componentDidMount() {
     this.props.dispatch(handleInitialData());
   }
+
+  // NBD: redirectToLogin
+
 
   render() {
     return (
@@ -27,6 +34,9 @@ class App extends Component {
               : <div>
                   <Route path='/' exact component={Dashboard} />
                   <Route path='/new' component={NewQuestion} />
+                  <Route path='/leaderboard' component={Leaderboard} />
+                  <Route path='/logout' component={Logout} />
+                  <Route path='/question_details' component={QuestionDetails} />
                 </div>}
           </div>
         </Fragment>
