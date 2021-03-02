@@ -7,7 +7,7 @@ import Tab from 'react-bootstrap/Tabs';
 
 class Dashboard extends Component {
   render() {
-    console.log(this.props);
+    console.log(this.unasweredQuestionIds);
 
     return (
       <div className="dashboard">
@@ -18,9 +18,8 @@ class Dashboard extends Component {
             <div label="Unanswered">
               <p>You choose...</p>
               <ul className="questions-List">
-                {this.props.questionIds.map((id) => (
+                {this.props.unasweredQuestionIds.map((id) => (
                   <li key={id}>
-                    {/* <div> question: {id}</div> */}
                     <Question id={id} />
                   </li>
                 ))}
@@ -29,7 +28,16 @@ class Dashboard extends Component {
           </Tab>
     
           <Tab eventKey="Answered" title="answered">
-            <div> hdsgfjhsdgf</div>
+          <div label="Answered">
+              <p>You answered...</p>
+              <ul className="questions-List">
+                {this.props.answeredQuestionIds.map((id) => (
+                  <li key={id}>
+                    <Question id={id} />
+                  </li>
+                ))}
+              </ul>
+            </div>
           </Tab>
 
         </Tabs>
@@ -41,11 +49,28 @@ class Dashboard extends Component {
 {
   /* // take a state of our store { questions } */
 }
-function mapStateToProps({ questions }) {
+function mapStateToProps({ questions, authedUser }) { 
+  console.log(authedUser)
+
+  const answeredQuestions = Object.values(questions)
+    .filter(question =>  
+    ((authedUser in question.optionOne.votes) || (authedUser in question.optionTwo.votes)));
+
+  console.log(answeredQuestions)
+
+  const unasweredQuestions = Object.values(questions)
+    .filter((question) => 
+    !(question.id in Object.keys(answeredQuestions)));
+    
+
   return {
-    questionIds: Object.keys(questions)
+    answeredQuestionIds: Object.keys(answeredQuestions)
       // questions are sorted by time
-      .sort((a, b) => questions[b].timestamp - questions[a].timestamp),
+      .sort((a, b) => answeredQuestions[b].timestamp - answeredQuestions[a].timestamp),
+
+    unasweredQuestionIds: Object.keys(unasweredQuestions)
+      // questions are sorted by time
+      .sort((a, b) => unasweredQuestions[b].timestamp - unasweredQuestions[a].timestamp),
   };
 }
 

@@ -76,7 +76,7 @@ class newQuestion extends Component {
           />
           {/* when the text is more then 100 show how much is left */}
           {textLeft <= 100 && (
-            <div className="answer-length">{textLeft}</div>
+            <div className="answer-length">It is {textLeft} characters left</div>
           )}
 
           <button
@@ -84,8 +84,8 @@ class newQuestion extends Component {
             type="submit"
             // disabled if the text is equal to empty string
             //'value' is not defined  no-undef
-            //disabled={text === ""}
-          >
+            disabled={optionOne === "" || optionTwo === ""}>
+          
             Submit
           </button>
         </form>
