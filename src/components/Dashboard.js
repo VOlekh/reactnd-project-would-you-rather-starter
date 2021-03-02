@@ -18,7 +18,7 @@ class Dashboard extends Component {
             <div label="Unanswered">
               <p>You choose...</p>
               <ul className="questions-List">
-                {this.props.unasweredQuestionIds.map((id) => (
+                {this.props.unansweredQuestionIds.map((id) => (
                   <li key={id}>
                     <Question id={id} />
                   </li>
@@ -54,23 +54,26 @@ function mapStateToProps({ questions, authedUser }) {
 
   const answeredQuestions = Object.values(questions)
     .filter(question =>  
-    ((authedUser in question.optionOne.votes) || (authedUser in question.optionTwo.votes)));
+    question.optionOne.votes.includes(authedUser) || question.optionTwo.votes.includes(authedUser));
 
-  console.log(answeredQuestions)
+  console.log(Object.values(questions))
 
-  const unasweredQuestions = Object.values(questions)
+  const unansweredQuestions = Object.values(questions)
     .filter((question) => 
-    !(question.id in Object.keys(answeredQuestions)));
-    
+    !answeredQuestions.includes(question));
+     // questions are sorted by time
 
   return {
-    answeredQuestionIds: Object.keys(answeredQuestions)
-      // questions are sorted by time
-      .sort((a, b) => answeredQuestions[b].timestamp - answeredQuestions[a].timestamp),
+    unansweredQuestionIds:
+    unansweredQuestions
+    .sort((a, b) => b.timestamp - a.timestamp)
+    .map(({id})=>id),
 
-    unasweredQuestionIds: Object.keys(unasweredQuestions)
-      // questions are sorted by time
-      .sort((a, b) => unasweredQuestions[b].timestamp - unasweredQuestions[a].timestamp),
+    answeredQuestionIds:
+    answeredQuestions
+    .sort((a, b) => b.timestamp - a.timestamp)
+    .map(({id})=>id)
+      
   };
 }
 

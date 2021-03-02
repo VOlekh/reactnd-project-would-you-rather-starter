@@ -23,7 +23,8 @@ class Question extends Component{
     
         dispatch(handleQuestionAnswer({
             qid: question.id,
-            answer: answer,
+            answer,
+            authedUser
             }));
       }
 

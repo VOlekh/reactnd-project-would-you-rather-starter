@@ -15,12 +15,12 @@ export function receiveQuestions (questions) {
 }
 
 //
-export function getSaveAnswerObject ({qid, author, answer}) { 
-    console.log(author)
+export function getSaveAnswerObject ({qid, authedUser, answer}) { 
+    console.log(authedUser)
     return{
         type: SAVE_ANSWER,
         qid,
-        author,
+        authedUser,
         answer
     }
 }
