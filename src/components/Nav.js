@@ -3,6 +3,7 @@ import React from 'react'
 //import Nav from 'react-bootstrap/Nav'
 import Dashboard from './Dashboard'
 import NewQuestion from './NewQuestion'
+import Login from './Login'
 import { NavLink } from 'react-router-dom'
 
 export default function Nav () {
@@ -31,6 +32,10 @@ export default function Nav () {
 
           <li>
             <NavLink to='/logout' activeClassName='active'>Logout</NavLink>
+          </li>
+
+          <li>
+            <NavLink to='/login' activeClassName='active'>Login</NavLink>
           </li>
 
         </ul>
