@@ -67,7 +67,7 @@ let questions = {
     timestamp: 1488579767190,
     optionOne: {
       votes: [],
-      text: 'be telekinetic',
+      text: 'be telekineticccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc cccccccccccccccccccccccccccc',
     },
     optionTwo: {
       votes: ['sarahedo'],
@@ -171,16 +171,16 @@ export function _saveQuestion (question) {
   })
 }
 
-export function _saveQuestionAnswer ({ author, qid, answer }) {
-  console.log(author);
+export function _saveQuestionAnswer ({ authedUser, qid, answer }) {
+  console.log(authedUser)
   return new Promise((res, rej) => {
     setTimeout(() => {
       users = {
         ...users,
-        [author]: {
-          ...users[author],
+        [authedUser]: {
+          ...users[authedUser],
           answers: {
-            ...users[author].answers,
+            ...users[authedUser].answers,
             [qid]: answer
           }
         }
@@ -192,7 +192,7 @@ export function _saveQuestionAnswer ({ author, qid, answer }) {
           ...questions[qid],
           [answer]: {
             ...questions[qid][answer],
-            votes: questions[qid][answer].votes.concat([author])
+            votes: questions[qid][answer].votes.concat([authedUser])
           }
         }
       }
