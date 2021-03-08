@@ -15,6 +15,8 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.2",
     "react-tabs": "^3.2.0",
+    "react-text-truncate": "^0.16.0",
+    "react-truncate": "^2.4.0",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
     "web-vitals": "^1.1.0"
