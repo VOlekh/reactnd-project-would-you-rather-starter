@@ -38,6 +38,8 @@ class App extends Component {
                   <Route path='/logout' component={Logout} />
                   <Route path='/login' component={Login} />
                   <Route path='/question_details' component={QuestionDetails} />
+                  {/*Hallo Name, avatar <img src = {user.avatarURL} alt = {`Avatar of ${user.name}`} className='avatar' /> */}
+               
                 </div>}
           </div>
         </Fragment>
@@ -46,10 +48,12 @@ class App extends Component {
   }
 }
 
-function mapStateToProps({authedUser}) {
+function mapStateToProps({authedUser},{users}) {
   console.log(authedUser)
  return{
-   loading: authedUser === null
+   loading: authedUser === null,
+   users
  } 
 }
+
 export default connect(mapStateToProps)(App);
