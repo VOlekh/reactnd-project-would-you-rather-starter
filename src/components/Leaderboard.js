@@ -22,28 +22,12 @@ class Leaderboard extends Component {
                          {/* Array - massive */}
                         <div> Score questions asked: {user.questions.length}</div>
                         {/* Dictionary, map, slovar */}
-                        <div>Score questions answered:{Object.keys(user.answers).length}</div>
-                                       
+                        <div>Score questions answered: {Object.keys(user.answers).length}</div>
+                        <div>TotalScore: {user.questions.length + Object.keys(user.answers).length}</div>               
                         </div>
                         ))
                         }
-        
-{/* 
-                     <div className='question-info'>
-                        <h3>Leaderboard results</h3>
-                            <div className="question-text-preview">
-                                    Score questions asked: {Object.values(users).map((user) =>
-                                    user.questions.length)}
-                            </div>
-                            <div>
-                                    Score questions answered: {Object.values(users).map((user) =>
-                                    user.answers.length)}
-                             </div>
-                                 <div>
-                                    Total: {scoreQustions + scoreAnswers}
-                                 </div>
-                            </div> */}
-                   
+
                 
             </ul>
         </div>

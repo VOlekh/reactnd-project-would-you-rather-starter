@@ -1,8 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { handleSaveQuestion } from "../actions/newQuestion";
-import { Redirect } from 'react-router-dom'
-//import { Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
+import Button from "react-bootstrap/Button";
+import FormControl from "react-bootstrap/FormControl";
+import Form from "react-bootstrap/Form";
+import Card from "react-bootstrap/Card";
 
 class newQuestion extends Component {
   state = {
@@ -12,86 +15,86 @@ class newQuestion extends Component {
     toHome: false,
   };
 
-  handleChange = (eOne) => {
-    const optionOne = eOne.target.value;
-    
-
+  handleChange = (e) => {
+    const optionOne = e.target.value;
     this.setState(() => ({
-        optionOne: "",
-
-    }));
-  };
-  handleChange = (eTwo) => {
-    const optionTwo = eTwo.target.value;
-    
-
-    this.setState(() => ({
-        optionTwo: "",
-
+      optionOne: "",
+      optionTwo: "",
     }));
   };
 
   handleSubmit = (e) => {
     e.preventDefault();
+    // Add Question to Store
     const { optionOne, optionTwo } = this.state;
     const { dispatch, id, authedUser } = this.props;
-    // Add Question to Store
+
     console.log("New question: ", optionOne, optionTwo);
+
     dispatch(handleSaveQuestion(optionOne, optionTwo, id, authedUser));
     // reset to empty string
     this.setState(() => ({
       optionOne: "",
       optionTwo: "",
-
-      // if id is a thing, then toHome is false, if not - true
-      //toHome: id ? false : true,
       //this.setState(()=>({toHome:true}))
     }));
   };
 
+  // if id is a thing, then toHome is false, if not - true
+  //toHome: id ? false : true,
   render() {
     const { optionOne, optionTwo } = this.state;
-    const textLeft = 100 - optionTwo.length;
-    //TBd: const textLeft = 100 - optionOne.length;
 
     return (
       <div>
         <h3 className="center">Compose new Question</h3>
         {/* //invoked handle submit method */}
-        <form className="new-question" onSubmit={this.handleSubmit}>
-          <textarea
-            placeholder="Option one"
-            value={optionOne}
-            // when input fild changes
-            onChange={this.handleChange}
-            className="answered"
-            maxLength={100}
-          />
-          <textarea
-            placeholder="Option two"
-            value={optionTwo}
-            onChange={this.handleChange}
-            className="answered"
-            maxLength={100}
-          />
-          {/* when the text is more then 100 show how much is left */}
-          {textLeft <= 100 && (
-            <div className="answer-length">It is {textLeft} characters left</div>
-          )}
 
-          <button
-            className="btn"
-            type="submit"
-            // disabled if the text is equal to empty string
-            //'value' is not defined  no-undef
-            disabled={optionOne === "" || optionTwo === ""}>
+        <Card>
+          <Card.Body>
           
-            Submit
-          </button>
-        </form>
+            <Form>
+              <Form.Group controlId="OptionOne">
+                <Form.Label>Option one</Form.Label>
+                <Form.Control
+                  type="text"
+                  onChange={this.handleChange}
+                  className="textarea"
+                  maxLength={200}
+                  placeholder="Would you.. "
+                />
+              </Form.Group>
+              <Form.Group controlId="OptionTwo">
+                <Form.Label>Option two</Form.Label>
+                <Form.Control
+                  type="text"
+                  onChange={this.handleChange}
+                  className="textarea"
+                  maxLength={200}
+                  placeholder="Would you rather.. "
+                />
+              </Form.Group>
+
+              
+            </Form>
+          </Card.Body>
+          <Button
+                variant="primary"
+                onClick={this.onNewQuestionSubmit}
+                type="submit"
+              >
+                Submit
+          </Button>
+        </Card>
       </div>
     );
   }
 }
+
+function mapStateToProps({ users, authedUser }) {
+  return {
+    authedUser,
+  };
+}
 // export default NewTweet
-export default connect()(newQuestion);
+export default connect(mapStateToProps)(newQuestion);
