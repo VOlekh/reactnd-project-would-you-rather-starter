@@ -140,11 +140,12 @@ li {
   cursor: pointer;
 }
 
-
-.heart-button {
-  background: transparent;
-  border: none;
+.question-card-name-date {
+  color: #00b5d6;
 }
+
+
+
 
 .new-question {
   width: 100%;
@@ -159,6 +160,7 @@ li {
   border: 1px solid #dad7d7;
   padding: 10px;
   font-size: 15px;
+  margin: 20px;
   height: 100px;
 }
 
@@ -167,4 +169,11 @@ li {
   margin-top: 10px;
   font-size: 20px;
   color: #C3392A;
+}
+
+.leaderboard-list
+{
+  
+  margin-top: 20px;
+  
 }

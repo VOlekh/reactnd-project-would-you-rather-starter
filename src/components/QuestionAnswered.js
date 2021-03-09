@@ -75,4 +75,4 @@ function mapStateToProps({authedUser, users, questions}, {id}) {
     }
 }
 
-export default connect(mapStateToProps) (AnsweredQuestion)
+export default connect(mapStateToProps) (QuestionAnswered)

@@ -5,7 +5,7 @@ import { handleInitialData } from '../actions/shared'
 
 import Nav from './Nav'
 import Dashboard from './Dashboard'
-import NewQuestion from './NewQuestion'
+import QuestionNew from './QuestionNew'
 import Leaderboard from './Leaderboard'
 import Login from './Login'
 import Logout from './Logout'
@@ -33,7 +33,7 @@ class App extends Component {
               ? null
               : <div>
                   <Route path='/' exact component={Dashboard} />
-                  <Route path='/new' component={NewQuestion} />
+                  <Route path='/new' component={QuestionNew} />
                   <Route path='/leaderboard' component={Leaderboard} />
                   <Route path='/logout' component={Logout} />
                   <Route path='/login' component={Login} />

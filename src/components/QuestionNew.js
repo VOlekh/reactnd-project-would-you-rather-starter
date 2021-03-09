@@ -7,7 +7,7 @@ import FormControl from "react-bootstrap/FormControl";
 import Form from "react-bootstrap/Form";
 import Card from "react-bootstrap/Card";
 
-class newQuestion extends Component {
+class QuestionNew extends Component {
   state = {
     //set state as empty string
     optionOne: "",
@@ -97,4 +97,4 @@ function mapStateToProps({ users, authedUser }) {
   };
 }
 // export default NewTweet
-export default connect(mapStateToProps)(newQuestion);
+export default connect(mapStateToProps)(QuestionNew);

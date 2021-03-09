@@ -10,15 +10,17 @@ class Logout extends Component {
     render() {
 
         return (
-            <Card>
-                <Card.Body>
-                <div className="center">
-                    <h3>You are logged out</h3>
-                   
-                </div>
-                </Card.Body>
-            </Card>    
-         
+            <div>
+                <h3 className="center">Logout</h3>
+                <Card>
+                    <Card.Body>
+                    <div className="center">
+                        <h3>You are logged out</h3>
+                    
+                    </div>
+                    </Card.Body>
+                </Card>    
+            </div>
         )
     }
 }

@@ -58,7 +58,7 @@ import Truncate from 'react-truncate';
                 src={avatar}
                 alt={`Avatar of ${name}`} 
             />
-            <Media.Body>
+            <Media.Body >
                 <h5>{name}</h5>
                 <p>{formatDate(timestamp)}</p>
             </Media.Body>

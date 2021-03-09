@@ -2,7 +2,7 @@ import React from 'react'
 // import { NavLink } from 'react-router-dom'
 //import Nav from 'react-bootstrap/Nav'
 import Dashboard from './Dashboard'
-import NewQuestion from './NewQuestion'
+import QuestionNew from './QuestionNew'
 import Login from './Login'
 import { NavLink } from 'react-router-dom'
 
