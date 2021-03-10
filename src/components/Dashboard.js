@@ -1,11 +1,15 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import Question from "./Question";
-import Tabs from 'react-bootstrap/Tabs';
-import { Redirect } from 'react-router-dom'
-import Tab from 'react-bootstrap/Tabs';
+import Tabs from "react-bootstrap/Tabs";
+import Tab from "react-bootstrap/Tabs";
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
+import {Link} from 'react-router-dom'
 
 class Dashboard extends Component {
+
+
   render() {
     console.log(this.unasweredQuestionIds);
 
@@ -13,32 +17,53 @@ class Dashboard extends Component {
       <div className="dashboard">
         <h3 className="center">Dashboard</h3>
         <Tabs defaultActiveKey="profile" id="HomePage">
-            
           <Tab eventKey="Unanswered" title="Unanswered questions">
             <div label="Unanswered">
               <ul className="questions-List">
                 {this.props.unansweredQuestionIds.map((id) => (
                   <li key={id}>
-                    <Question id={id} />
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </Tab>
-    
-          <Tab eventKey="Answered" title="Answered questions">
-          <div label="Answered">
-              <p>You answered...</p>
-              <ul className="questions-List">
-                {this.props.answeredQuestionIds.map((id) => (
-                  <li key={id}>
-                    <Question id={id} />
+                    <Card>
+                      <Card.Body>
+                        <Question id={id} />
+                        <Link to={`/quesitons/${id}`}>
+                          <Button
+                            // variant="primary"
+                            // onClick={this.onViewPoll(id)}
+                            // type="button"
+                          >
+                            View Poll
+                          </Button>
+                        </Link>
+                      </Card.Body>
+                    </Card>
                   </li>
                 ))}
               </ul>
             </div>
           </Tab>
 
+          <Tab eventKey="Answered" title="Answered questions">
+            <div label="Answered">
+              <ul className="questions-List">
+                {this.props.answeredQuestionIds.map((id) => (
+                  <li key={id}>
+                    <Card>
+                      <Card.Body>
+                        <Question id={id} />
+                        <Button
+                          variant="primary"
+                          onClick={this.onDetails}
+                          type="button"
+                        >
+                          Deatails
+                        </Button>
+                      </Card.Body>
+                    </Card>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Tab>
         </Tabs>
       </div>
     );
@@ -48,31 +73,32 @@ class Dashboard extends Component {
 {
   /* // take a state of our store { questions } */
 }
-function mapStateToProps({ questions, authedUser }) { 
-  console.log(authedUser)
+function mapStateToProps({ questions, authedUser }, { id }) {
+  const question = questions[id];
 
-  const answeredQuestions = Object.values(questions)
-    .filter(question =>  
-    question.optionOne.votes.includes(authedUser) || question.optionTwo.votes.includes(authedUser));
+  console.log(authedUser);
 
-  console.log(Object.values(questions))
+  const answeredQuestions = Object.values(questions).filter(
+    (question) =>
+      question.optionOne.votes.includes(authedUser) ||
+      question.optionTwo.votes.includes(authedUser)
+  );
 
-  const unansweredQuestions = Object.values(questions)
-    .filter((question) => 
-    !answeredQuestions.includes(question));
-     // questions are sorted by time
+  console.log(Object.values(questions));
+
+  const unansweredQuestions = Object.values(questions).filter(
+    (question) => !answeredQuestions.includes(question)
+  );
+  // questions are sorted by time
 
   return {
-    unansweredQuestionIds:
-    unansweredQuestions
-    .sort((a, b) => b.timestamp - a.timestamp)
-    .map(({id})=>id),
+    unansweredQuestionIds: unansweredQuestions
+      .sort((a, b) => b.timestamp - a.timestamp)
+      .map(({ id }) => id),
 
-    answeredQuestionIds:
-    answeredQuestions
-    .sort((a, b) => b.timestamp - a.timestamp)
-    .map(({id})=>id)
-      
+    answeredQuestionIds: answeredQuestions
+      .sort((a, b) => b.timestamp - a.timestamp)
+      .map(({ id }) => id),
   };
 }
 

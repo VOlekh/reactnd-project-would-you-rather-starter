@@ -52,7 +52,7 @@ class QuestionNew extends Component {
 
         <Card>
           <Card.Body>
-          
+          <h4 className="center">Would you rather</h4>
             <Form>
               <Form.Group controlId="OptionOne">
                 <Form.Label>Option one</Form.Label>

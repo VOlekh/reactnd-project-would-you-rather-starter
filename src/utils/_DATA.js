@@ -3,6 +3,7 @@ let users = {
     id: 'sarahedo',
     name: 'Sarah Edo',
     avatarURL: 'https://avatanplus.com/files/photos/original/56ed3f70f111a1538ebfd15b.png',
+    // avatarURL: '../72-722174_these-are-some-cats-avatar-i-drew-during-my-free-time-cartoon.png',
     answers: {
       "8xf0y6ziyjabvozdd253nd": 'optionOne',
       "6ni6ok3ym7mf1p33lnez": 'optionTwo',
@@ -67,8 +68,7 @@ let questions = {
     timestamp: 1488579767190,
     optionOne: {
       votes: [],
-      text: 'be telekineticccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc cccccccccccccccccccccccccccc',
-    },
+      text: 'be telekinetic'},
     optionTwo: {
       votes: ['sarahedo'],
       text: 'be telepathic'

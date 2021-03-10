@@ -5,11 +5,10 @@ import { RadioGroup, RadioButton } from "react-radio-buttons";
 import { handleQuestionAnswer } from "../actions/questions";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import TextTruncate from 'react-text-truncate'; // recommend
-var TextTruncate = require('react-text-truncate'); // CommonJS or UMD
 
 
-class Question extends Component {
+
+class QuestionViewPoll extends Component {
   onAnswerChange = (answer) => {
     console.log(answer);
     this.setState(() => ({
@@ -32,7 +31,8 @@ class Question extends Component {
   };
 
   render() {
-    // console.log(this.props)
+      <p>YABADABAdooo </p>
+    console.log("YABADABAdooo:", this.props)
     const { question, authedUser } = this.props;
     console.log(authedUser);
     const { name, avatar, timestamp, optionOne, optionTwo } = question;
@@ -40,40 +40,34 @@ class Question extends Component {
     return (
       <Card>
         <Card.Body>
-          <div>
-            <div className="x">
-            <img src={avatar} alt={`Avatar of ${name}`} className="avatar" />
-            </div>
-            
+            <div>
+                <div className="x">
+                    <img src={avatar} alt={`Avatar of ${name}`} className="avatar" />
+                </div>
+                
 
-            <div className="question-info">
-              <span>{name}</span>
-              <span> {formatDate(timestamp)}</span>
+                <div className="question-info">
+                    <span>{name}</span>
+                    <span> {formatDate(timestamp)}</span>
+                </div>
 
-              <h3>Would you rather ...</h3>
-              <div>
-              <TextTruncate
-                    line={1}
-                    element="span"
-                    truncateText="…"
-                    text={optionOne.text}
-                    textTruncateChild={<a href="#">Read on</a>}
-                />
-              </div>
-              <RadioGroup onChange={this.onAnswerChange}>
-                <RadioButton value="optionOne">{optionOne.text}</RadioButton>
-                <RadioButton value="optionTwo">{optionTwo.text}</RadioButton>
-              </RadioGroup>
-              <Button
-                variant="primary"
-                onClick={this.onAnswerSubmit}
-                type="submit"
-              >
-           
-                Submit
-              </Button>
+                <h3>Would you rather ...</h3>
+                <div>
+                    <RadioGroup onChange={this.onAnswerChange}>
+                        <RadioButton value="optionOne">{optionOne.text}</RadioButton>
+                        <RadioButton value="optionTwo">{optionTwo.text}</RadioButton>
+                    </RadioGroup>
+                    <Button
+                        variant="primary"
+                        onClick={this.onAnswerSubmit}
+                        type="submit"
+                    >
+                
+                        Submit
+                    </Button>
+                </div>
+
             </div>
-          </div>
         </Card.Body>
       </Card>
     );

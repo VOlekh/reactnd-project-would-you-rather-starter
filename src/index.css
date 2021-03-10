@@ -19,16 +19,16 @@ code {
 
 
 
-a {
+/* a {
   text-decoration: none;
   color: #252525;
-}
+} */
 
-.container {
+/* .container {
   max-width: 1000px;
   margin: 0 auto;
   padding: 10px;
-}
+} */
 
 .btn {
   text-transform: uppercase;
@@ -57,9 +57,11 @@ a {
   text-align: center;
 }
 
+
+/* answer text bold
 .active {
   font-weight: bold;
-}
+} */
 
 .nav ul {
   display: flex;
@@ -83,12 +85,12 @@ li {
 }
 
 .avatar {
-  height: 50px;
+  height: 70px;
   border-radius: 25px;
   margin: 10px;
 }
 
-.question {
+/* .question {
   width: 100%;
   max-width: 590px;
   padding: 10px;
@@ -97,16 +99,16 @@ li {
   border: 1px solid #dad7d7;
   border-radius: 3px;
   cursor: pointer;
-}
+} */
 
-.question-info {
+/* .question-info {
   margin: 10px;
   display: flex;
   flex-direction: column;
-}
+} */
 
 /* Hacky but less typing in the video */
-.question-info > div > span:first-child {
+/* .question-info > div > span:first-child {
   font-weight: bold;
   margin-right: 5px;
 }
@@ -138,7 +140,7 @@ li {
 .question-icon:hover {
   color: #00b5d6;
   cursor: pointer;
-}
+} */
 
 .question-card-name-date {
   color: #00b5d6;
@@ -147,29 +149,29 @@ li {
 
 
 
-.new-question {
+/* .new-question {
   width: 100%;
   max-width: 590px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-}
+} */
 
-.textarea {
+/* .textarea {
   border-radius: 4px;
   border: 1px solid #dad7d7;
   padding: 10px;
   font-size: 15px;
   margin: 20px;
   height: 100px;
-}
+} */
 
-.question-length {
+/* .question-length {
   text-align: right;
   margin-top: 10px;
   font-size: 20px;
   color: #C3392A;
-}
+} */
 
 .leaderboard-list
 {

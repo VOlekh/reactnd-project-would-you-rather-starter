@@ -33,11 +33,7 @@ import Truncate from 'react-truncate';
 
 
 
-    // const history = useHistory()
 
-    // function onViewPoll() {
-    //     history.push(`/questions/${question.id}`)
-    // }
 
   render() {
     // console.log(this.props)
@@ -77,13 +73,13 @@ import Truncate from 'react-truncate';
               </div>
             </div>
         </Card.Body>
-        <Button
+        {/* <Button
             variant="primary"
-            onClick={this.onViewPoll}
-            type="viewPoll"
+            onClick={this.onAnswerSubmit}
+            type="submit"
             >
-            View Poll
-        </Button>
+            Submit
+        </Button> */}
       </Card>
     );
   }
