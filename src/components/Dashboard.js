@@ -25,7 +25,7 @@ class Dashboard extends Component {
                     <Card>
                       <Card.Body>
                         <Question id={id} />
-                        <Link to={`/quesitons/${id}`}>
+                        <Link to={`/questions/${id}`}>
                           <Button
                             // variant="primary"
                             // onClick={this.onViewPoll(id)}
@@ -92,6 +92,7 @@ function mapStateToProps({ questions, authedUser }, { id }) {
   // questions are sorted by time
 
   return {
+    id,
     unansweredQuestionIds: unansweredQuestions
       .sort((a, b) => b.timestamp - a.timestamp)
       .map(({ id }) => id),
