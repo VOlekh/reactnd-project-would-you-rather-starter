@@ -59,10 +59,10 @@ class QuestionViewPoll extends Component {
 
                     <h3>Would you rather ...</h3>
                     <div>
-                    {/* <RadioGroup onChange={this.onAnswerChange}>
+                    <RadioGroup onChange={this.onAnswerChange}>
                         <RadioButton value="optionOne">{optionOne.text}</RadioButton>
                         <RadioButton value="optionTwo">{optionTwo.text}</RadioButton>
-                    </RadioGroup> */}
+                    </RadioGroup>
                     <Button
                         variant="primary"
                         onClick={this.onAnswerSubmit}
