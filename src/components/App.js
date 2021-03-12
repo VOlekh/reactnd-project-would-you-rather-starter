@@ -9,6 +9,7 @@ import QuestionNew from './QuestionNew'
 import Leaderboard from './Leaderboard'
 import Login from './Login'
 import Logout from './Logout'
+import QuestionRoute from './QuestionRoute';
 import QuestionDetails from './QuestionDetails';
 import QuestionViewPoll from './QuestionViewPoll';
 
@@ -40,7 +41,7 @@ class App extends Component {
                     <Route path='/leaderboard' component={Leaderboard} />
                     <Route path='/logout' component={Logout} />
                     <Route path='/login' component={Login} />
-                    <Route path='/questions/:question_id' component={QuestionViewPoll} />
+                    <Route path='/questions/:question_id' component={QuestionRoute} questions={this.props.questions} />
                     {/*Hallo Name, avatar <img src = {user.avatarURL} alt = {`Avatar of ${user.name}`} className='avatar' /> */}
                 
                   </div>}
@@ -51,12 +52,13 @@ class App extends Component {
   }
 }
 
-function mapStateToProps({authedUser},{users}) {
+function mapStateToProps({authedUser},{users, questions}) {
   console.log(authedUser)
  return{
    loading: authedUser === null,
    users,
-   authedUser
+   authedUser,
+   questions
  } 
 }
 

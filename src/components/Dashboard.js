@@ -26,13 +26,7 @@ class Dashboard extends Component {
                       <Card.Body>
                         <Question id={id} />
                         <Link to={`/questions/${id}`}>
-                          <Button
-                            // variant="primary"
-                            // onClick={this.onViewPoll(id)}
-                            // type="button"
-                          >
-                            View Poll
-                          </Button>
+                          <Button>View Poll</Button>
                         </Link>
                       </Card.Body>
                     </Card>
@@ -48,15 +42,11 @@ class Dashboard extends Component {
                 {this.props.answeredQuestionIds.map((id) => (
                   <li key={id}>
                     <Card>
-                      <Card.Body>
+                    <Card.Body>
                         <Question id={id} />
-                        <Button
-                          variant="primary"
-                          onClick={this.onDetails}
-                          type="button"
-                        >
-                          Deatails
-                        </Button>
+                        <Link to={`/questions/${id}`}>
+                          <Button>View Poll</Button>
+                        </Link>
                       </Card.Body>
                     </Card>
                   </li>

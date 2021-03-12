@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { handleSaveQuestion } from "../actions/newQuestion";
-import { Redirect } from "react-router-dom";
 import Button from "react-bootstrap/Button";
-import FormControl from "react-bootstrap/FormControl";
 import Form from "react-bootstrap/Form";
 import Card from "react-bootstrap/Card";
 

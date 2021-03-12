@@ -1,12 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { formatDate, formatQuestion } from "../utils/helper";
-import { useHistory } from "react-router-dom";
 import { handleQuestionAnswer } from "../actions/questions";
-import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Media from "react-bootstrap/Media";
-import Truncate from "react-truncate";
+
 
 class Question extends Component {
     
