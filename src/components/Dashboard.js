@@ -45,7 +45,7 @@ class Dashboard extends Component {
                     <Card.Body>
                         <Question id={id} />
                         <Link to={`/questions/${id}`}>
-                          <Button>View Poll</Button>
+                          <Button>Details</Button>
                         </Link>
                       </Card.Body>
                     </Card>
