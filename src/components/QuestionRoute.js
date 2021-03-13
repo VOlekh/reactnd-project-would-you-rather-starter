@@ -12,13 +12,15 @@ class QuestionRoute extends Component {
         const { users, questions, authedUser } = this.props
 		const { id } = this.props.match.params
         const question = questions[id]
+        const { question_id } = this.props.match.params
+    
 
         const userAnswers = Object.keys(users[authedUser].answers)
     
     
 
         return (
-            userAnswers.includes(question)
+            userAnswers.includes(question_id)
                 ? <QuestionDetails question={question} />
                 : <QuestionViewPoll question={question} />
         )
@@ -29,13 +31,14 @@ class QuestionRoute extends Component {
 function mapStateToProps({ authedUser, users, questions }) {
     let url = window.location.pathname;
     let id = url.substring(url.lastIndexOf('/') + 1);
-    //const question_id = questions[id];
+    
     
     return {
         users,
         id,
         authedUser,
-        questions
+        questions,
+    
     };
 }
 
