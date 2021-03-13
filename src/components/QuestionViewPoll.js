@@ -39,7 +39,7 @@ class QuestionViewPoll extends Component {
 
     return (
         <div className="view-poll">
-        <h4 className="center">View Poll</h4>
+        <h3 className="center">View Poll</h3>
             <Card>
                 <Card.Body>
                 <div>

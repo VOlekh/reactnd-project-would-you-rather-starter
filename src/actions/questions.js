@@ -1,10 +1,10 @@
-//import { saveQuestionAnswer } from '../utils/api';
-import { saveQuestionAnswer} from '../utils/api'
-import { getSaveQuestionToUser } from '../actions/users'
+import { saveQuestionAnswer } from '../utils/api';
+import { saveAnswerToUser} from '../actions/users'
 export const RECEIVE_QUESTIONS = 'RECEIVE_QUESTIONS'
 export const ADD_QUESTION = 'ADD_QUESTION'
-export const SAVE_ANSWER = 'SAVE_ANSWER'
+export const SAVE_ANSWER_TO_QUESTION = 'SAVE_ANSWER_TO_QUESTION'
 export const SAVE_QUESTION = 'SAVE_QUESTION'
+
 
 
 
@@ -24,10 +24,10 @@ function addQuestion(question) {
 }
 
 //
-export function getSaveAnswerObject ({qid, authedUser, answer}) { 
+export function saveAnswerToQuestion ({qid, authedUser, answer}) { 
     console.log(authedUser)
     return{
-        type: SAVE_ANSWER,
+        type: SAVE_ANSWER_TO_QUESTION,
         qid,
         authedUser,
         answer
@@ -40,8 +40,8 @@ export function handleQuestionAnswer(info) {
     return (dispatch) => {
         return saveQuestionAnswer(info)
             .then(() => {
-                dispatch(getSaveAnswerObject(info))
-                dispatch (getSaveQuestionToUser(info))
+                dispatch(saveAnswerToQuestion(info))
+                dispatch (saveAnswerToUser(info))
             })
             .catch((e) => {
                 console.warn('Error in handleQuestionAnswer: ', e);
