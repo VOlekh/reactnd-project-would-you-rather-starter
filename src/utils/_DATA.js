@@ -1,8 +1,11 @@
+import SarahCat from "../img/clipart1236792 (1).png"
+
+
 let users = {
   sarahedo: {
     id: 'sarahedo',
     name: 'Sarah Edo',
-    avatarURL: 'https://avatanplus.com/files/photos/original/56ed3f70f111a1538ebfd15b.png',
+    avatarURL: SarahCat,
     // avatarURL: '../72-722174_these-are-some-cats-avatar-i-drew-during-my-free-time-cartoon.png',
     answers: {
       "8xf0y6ziyjabvozdd253nd": 'optionOne',
