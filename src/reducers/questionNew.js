@@ -1,4 +1,4 @@
-import {SAVE_QUESTION} from '../actions/newQuestion'
+import {SAVE_QUESTION} from '../actions/questionNew'
 
 export default function questions (state = null, action) {
     switch (action.type) {

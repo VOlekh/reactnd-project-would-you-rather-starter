@@ -1,8 +1,10 @@
 import { saveQuestion } from "../utils/api";
-
 export const SAVE_QUESTION = "SAVE_QUESTION";
+
+
+
 //action creator
-// function saveQuestion (questions) {
+// export function saveQuestion (questions) {
     
 //     return{
 //         type: SAVE_QUESTION,
