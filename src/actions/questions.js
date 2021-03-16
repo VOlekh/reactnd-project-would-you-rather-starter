@@ -3,7 +3,7 @@ import { saveAnswerToUser} from '../actions/users'
 export const RECEIVE_QUESTIONS = 'RECEIVE_QUESTIONS'
 export const ADD_QUESTION = 'ADD_QUESTION'
 export const SAVE_ANSWER_TO_QUESTION = 'SAVE_ANSWER_TO_QUESTION'
-export const SAVE_QUESTION = 'SAVE_QUESTION'
+
 
 
 
@@ -16,12 +16,6 @@ export function receiveQuestions (questions) {
     }
 }
 
-function addQuestion(question) {
-    return {
-        type: ADD_QUESTION,
-        question
-    }
-}
 
 //
 export function saveAnswerToQuestion ({qid, authedUser, answer}) { 

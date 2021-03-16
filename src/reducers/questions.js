@@ -24,7 +24,7 @@ export default function questions(state = {}, action) {
     //When saving a question, the state for that specific question needs to change - either the property which, is an array and will contain the names of the users
     case SAVE_ANSWER_TO_QUESTION: {
       // const {users, questions} = state;
-      const { authedUser, qid, answer } = action.answer;
+      const { authedUser, qid, answer } = action;
       return {
         ...state,
         [qid]: {

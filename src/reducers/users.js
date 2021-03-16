@@ -4,7 +4,7 @@ import {SAVE_ANSWER_TO_USER} from '../actions/users'
 //initialized each slice of the store by setting a default state value as the first parameter inside each reducer function
 export default function users (state = {}, action) {
     switch (action.type) {
-      
+
         case RECEIVE_USERS:
           return {
               // new state which is at the beginning an empty state {} plus action.users
@@ -13,7 +13,8 @@ export default function users (state = {}, action) {
           };
 
         case SAVE_ANSWER_TO_USER:
-          const { answer, qid, authedUser } = action.answer;
+          //TBD test with breake point change action.question to action.users to test 
+          const { answer, qid, authedUser } = action.question;
             return {
                 ...state,
                 [authedUser]: {
