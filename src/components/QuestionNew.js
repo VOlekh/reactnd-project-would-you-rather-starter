@@ -15,17 +15,19 @@ class QuestionNew extends Component {
   };
 
   onOptionOneChange = (e1) => {
+    //change the state 
     const optionOneText = e1.target.value;
     this.setState(() => ({optionOneText}));
   };
   onOptionTwoChange = (e2) => {
+    //change the state 
     const optionTwoText = e2.target.value;
     this.setState(() => ({optionTwoText}));
   };
 
   onNewQuestionSubmit = (e) => {
     e.preventDefault();
-    // Add Question to Store
+    // add Question to Store
     const { optionOneText, optionTwoText } = this.state;
     const { dispatch, id, authedUser } = this.props;
 
@@ -81,6 +83,7 @@ class QuestionNew extends Component {
                 variant="primary"
                 onClick={this.onNewQuestionSubmit}
                 type="submit"
+                disabled={this.state.optionOneText === '' || this.state.optionTwoText === ''}
               >
                 Submit
           </Button>
