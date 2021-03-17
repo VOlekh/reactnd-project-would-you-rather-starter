@@ -10,8 +10,6 @@ import Leaderboard from './Leaderboard'
 import Login from './Login'
 import Logout from './Logout'
 import QuestionRoute from './QuestionRoute';
-import QuestionDetails from './QuestionDetails';
-import QuestionViewPoll from './QuestionViewPoll';
 
 
 

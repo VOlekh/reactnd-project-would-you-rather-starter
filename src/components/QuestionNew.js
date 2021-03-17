@@ -1,39 +1,42 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { handleSaveQuestion } from "../actions/questionNew";
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
-import Card from "react-bootstrap/Card";
+import React, { Component } from "react"
+import { connect } from "react-redux"
+import { handleSaveQuestion } from "../actions/questions"
+import Button from "react-bootstrap/Button"
+import Form from "react-bootstrap/Form"
+import Card from "react-bootstrap/Card"
+import { formatQuestion } from "../utils/helper"
 
 class QuestionNew extends Component {
   state = {
     //set state as empty string
-    optionOne: "",
-    optionTwo: "",
+    optionOneText: "",
+    optionTwoText: "",
     toHome: false,
   };
 
-  handleChange = (e) => {
-    const optionOne = e.target.value;
-    this.setState(() => ({
-      optionOne: "",
-      optionTwo: "",
-    }));
+  onOptionOneChange = (e1) => {
+    const optionOneText = e1.target.value;
+    this.setState(() => ({optionOneText}));
+  };
+  onOptionTwoChange = (e2) => {
+    const optionTwoText = e2.target.value;
+    this.setState(() => ({optionTwoText}));
   };
 
-  handleSubmit = (e) => {
+  onNewQuestionSubmit = (e) => {
     e.preventDefault();
     // Add Question to Store
-    const { optionOne, optionTwo } = this.state;
+    const { optionOneText, optionTwoText } = this.state;
     const { dispatch, id, authedUser } = this.props;
 
-    console.log("New question: ", optionOne, optionTwo);
+    console.log("New question: ", optionOneText, optionTwoText);
+    const question = formatQuestion ({ optionOneText, optionTwoText, authedUser })
 
-    dispatch(handleSaveQuestion(optionOne, optionTwo, id, authedUser));
+    dispatch(handleSaveQuestion(question));
     // reset to empty string
     this.setState(() => ({
-      optionOne: "",
-      optionTwo: "",
+      optionOneText: "",
+      optionTwoText: "",
       //this.setState(()=>({toHome:true}))
     }));
   };
@@ -41,7 +44,7 @@ class QuestionNew extends Component {
   // if id is a thing, then toHome is false, if not - true
   //toHome: id ? false : true,
   render() {
-    const { optionOne, optionTwo } = this.state;
+   
 
     return (
       <div>
@@ -56,7 +59,7 @@ class QuestionNew extends Component {
                 <Form.Label>Option one</Form.Label>
                 <Form.Control
                   type="text"
-                  onChange={this.handleChange}
+                  onChange={this.onOptionOneChange}
                   className="textarea"
                   maxLength={200}
                   placeholder="Would you.. "
@@ -66,14 +69,12 @@ class QuestionNew extends Component {
                 <Form.Label>Option two</Form.Label>
                 <Form.Control
                   type="text"
-                  onChange={this.handleChange}
+                  onChange={this.onOptionTwoChange}
                   className="textarea"
                   maxLength={200}
                   placeholder="Would you rather.. "
                 />
               </Form.Group>
-
-              
             </Form>
           </Card.Body>
           <Button
@@ -91,7 +92,7 @@ class QuestionNew extends Component {
 
 function mapStateToProps({ users, authedUser }) {
   return {
-    authedUser,
+    authedUser
   };
 }
 // export default NewTweet

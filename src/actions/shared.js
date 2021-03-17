@@ -2,7 +2,7 @@ import {getInitialData} from '../utils/api'
 import {receiveUsers} from '../actions/users'
 import {receiveQuestions} from '../actions/questions'
 import {setAuthedUser} from '../actions/authedUser'
-import {saveQuestion } from "./questionNew";
+
 
 const AUTHED_ID = 'johndoe' 
 getInitialData()

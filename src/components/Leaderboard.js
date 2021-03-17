@@ -23,7 +23,7 @@ class Leaderboard extends Component {
     // console.log("scoreQustions:", scoreQustions )
     return (
         <div className="leaderboard">
-            <h4 className="center">Leaderboard</h4>
+            <h3 className="center">Leaderboard</h3>
             <ul className="leaderbord_list">
                 {users.map((user) => 
                         (

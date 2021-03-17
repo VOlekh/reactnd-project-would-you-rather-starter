@@ -1,7 +1,7 @@
 import {
   RECEIVE_QUESTIONS,
   SAVE_ANSWER_TO_QUESTION,
-  ADD_QUESTION,
+  SAVE_QUESTION_TO_QUESTION,
 } from "../actions/questions";
 
 // 1st way to initialize the state inside the store: include a default state parameter as the first argument inside a particular reducer function.
@@ -14,7 +14,7 @@ export default function questions(state = {}, action) {
         ...action.questions,
       };
 
-    case ADD_QUESTION:
+    case SAVE_QUESTION_TO_QUESTION:
       const { question } = action;
       return {
         ...state,

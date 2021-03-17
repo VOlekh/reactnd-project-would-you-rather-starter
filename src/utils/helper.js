@@ -6,21 +6,15 @@ export function formatDate (timestamp) {
   
   export function formatQuestion (question, author, authedUser) {
     const { id,  timestamp, optionOne, optionTwo} = question
-    const { name, avatarURL } = author
+    // const { name, avatarURL } = author
   
     return {
-      name,
+      // name,
       id,
       timestamp,
-      avatar: avatarURL,
+      // avatar: avatarURL,
       optionOne,
       optionTwo,
-    //   likes: likes.length,
-    //   replies: replies.length,
-    //   hasLiked: likes.includes(authedUser),
-    //   parent: !parentTweet ? null : {
-    //     author: parentTweet.author,
-    //     id: parentTweet.id,
-    //  }
+    
     }
   }
