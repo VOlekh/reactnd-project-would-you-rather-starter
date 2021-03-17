@@ -1,4 +1,6 @@
-import SarahCat from "../img/clipart1236792 (1).png"
+import SarahCat from "../img/clipart1236782.png"
+import TylerCat from "../img/clipart722174.png"
+import JohnCat from "../img/clipart1236792.png"
 
 
 let users = {
@@ -18,7 +20,7 @@ let users = {
   tylermcginnis: {
     id: 'tylermcginnis',
     name: 'Tyler McGinnis',
-    avatarURL: 'https://avatanplus.com/files/photos/original/56ed3f70f111a1538ebfd15b.png',
+    avatarURL: TylerCat,
     answers: {
       "vthrdm985a262al8qx3do": 'optionOne',
       "xj352vofupe1dqz9emx13r": 'optionTwo',
@@ -28,7 +30,7 @@ let users = {
   johndoe: {
     id: 'johndoe',
     name: 'John Doe',
-    avatarURL: 'https://avatanplus.com/files/photos/original/56ed3f70f111a1538ebfd15b.png',
+    avatarURL: JohnCat,
     answers: {
       "xj352vofupe1dqz9emx13r": 'optionOne',
       "vthrdm985a262al8qx3do": 'optionTwo',
