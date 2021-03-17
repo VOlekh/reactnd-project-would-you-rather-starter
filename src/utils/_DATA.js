@@ -1,6 +1,7 @@
 import SarahCat from "../img/clipart1236782.png"
 import TylerCat from "../img/clipart722174.png"
 import JohnCat from "../img/clipart1236792.png"
+//https://www.clipartmax.com/middle/m2i8G6i8b1i8d3Z5_these-are-some-cats-avatar-i-drew-during-my-free-time-cartoon/
 
 
 let users = {

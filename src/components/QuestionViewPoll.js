@@ -67,6 +67,7 @@ class QuestionViewPoll extends Component {
                         variant="primary"
                         onClick={this.onAnswerSubmit}
                         type="submit"
+                        // disabled={this.state.optionOne === '' && this.state.optionTwo === ''}
                     >
                         Submit
                     </Button>

@@ -6,15 +6,14 @@ export function formatDate (timestamp) {
   
   export function formatQuestion (question, author, authedUser) {
     const { id,  timestamp, optionOne, optionTwo} = question
-    // const { name, avatarURL } = author
+    const { name, avatarURL } = author
   
     return {
-      // name,
+      name,
       id,
       timestamp,
-      // avatar: avatarURL,
+      avatar: avatarURL,
       optionOne,
-      optionTwo,
-    
+      optionTwo
     }
   }

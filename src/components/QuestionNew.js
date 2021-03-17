@@ -1,10 +1,10 @@
-import React, { Component } from "react"
-import { connect } from "react-redux"
-import { handleSaveQuestion } from "../actions/questions"
-import Button from "react-bootstrap/Button"
-import Form from "react-bootstrap/Form"
-import Card from "react-bootstrap/Card"
-import { formatQuestion } from "../utils/helper"
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { handleSaveQuestion } from '../actions/questions'
+import Button from 'react-bootstrap/Button'
+import Form from 'react-bootstrap/Form'
+import Card from 'react-bootstrap/Card'
+import { Redirect } from 'react-router-dom'
 
 class QuestionNew extends Component {
   state = {
@@ -32,13 +32,14 @@ class QuestionNew extends Component {
     const { dispatch, id, authedUser } = this.props;
 
     console.log("New question: ", optionOneText, optionTwoText);
-    const question = formatQuestion ({ optionOneText, optionTwoText, authedUser })
 
-    dispatch(handleSaveQuestion(question));
+    //passing values to dispatch 
+    dispatch(handleSaveQuestion({ optionOneText, optionTwoText, author: authedUser }));
     // reset to empty string
     this.setState(() => ({
       optionOneText: "",
       optionTwoText: "",
+      // author: authedUser
       //this.setState(()=>({toHome:true}))
     }));
   };
@@ -98,5 +99,5 @@ function mapStateToProps({ users, authedUser }) {
     authedUser
   };
 }
-// export default NewTweet
+
 export default connect(mapStateToProps)(QuestionNew);

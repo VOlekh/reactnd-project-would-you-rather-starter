@@ -9,9 +9,8 @@ class Question extends Component {
   render() {
     // console.log(this.props)
     const { question, authedUser } = this.props;
-    console.log(authedUser);
+    // console.log(authedUser);
     const { name, avatar, timestamp, optionOne, optionTwo } = question;
-    const TextTruncate = require("react-text-truncate");
 
     return (
       <Card>
@@ -51,7 +50,7 @@ class Question extends Component {
 
 function mapStateToProps({ authedUser, users, questions }, { id }) {
   const question = questions[id];
-  console.log(authedUser);
+  // console.log(authedUser);
   return {
     authedUser,
     question: formatQuestion(question, users[question.author], authedUser),
