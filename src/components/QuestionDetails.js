@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { formatDate, formatQuestion } from "../utils/helper";
 import { RadioGroup, RadioButton } from "react-radio-buttons";
 import { handleQuestionAnswer } from "../actions/questions";
+import ProgressBar from "react-bootstrap/ProgressBar";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Media from "react-bootstrap/Media";
@@ -10,14 +11,14 @@ import Media from "react-bootstrap/Media";
 
 class QuestionDetails extends Component {
     
-    // const percentageVoted = 60;
-    // const progressInstanceVoted = <ProgressBar percentageVoted={percentageVoted} label={`${percentageVoted}%`} />;
+    // percentageVoted = 60;
+    // progressInstanceVoted = <ProgressBar percentageVoted={percentageVoted} label={`${percentageVoted}%`} />;
     // render(progressInstanceVoted);
     //   the text of the option;
     //                     the number of people who voted for that option;
     //                     the percentage of people who voted for that option.
 
-    render() {
+    render(progressInstanceVoted) {
         const { question, authedUser } = this.props;
         console.log(authedUser);
         const { name, avatar, timestamp, optionOne, optionTwo } = question;
@@ -46,17 +47,9 @@ class QuestionDetails extends Component {
     
                         <h3>Would you rather ...</h3>
                         <div>
-                        {/* <RadioGroup onChange={this.onAnswerChange}>
-                            <RadioButton value="optionOne">{optionOne.text}</RadioButton>
-                            <RadioButton value="optionTwo">{optionTwo.text}</RadioButton>
-                        </RadioGroup> */}
-                        <Button
-                            variant="primary"
-                            onClick={this.onAnswerSubmit}
-                            type="submit"
-                        >
-                            Submit
-                        </Button>
+                        <p>  the number of people who voted for that option;
+                        the percentage of people who voted for that option.</p>
+                                            
                         </div>
                     </div>
                     </Card.Body>

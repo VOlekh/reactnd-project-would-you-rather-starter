@@ -2,7 +2,8 @@ import {
     _getUsers,
     _getQuestions,
     _saveQuestionAnswer,
-    _saveQuestion
+    _saveQuestion,
+    _checkLogin
 
   } from './_DATA.js'
 
@@ -24,4 +25,7 @@ export function getInitialData () {
     return _saveQuestion(info)
   } 
 
+  export function checkLogin (authedUser) {
+    return _checkLogin(authedUser)
+  }
   

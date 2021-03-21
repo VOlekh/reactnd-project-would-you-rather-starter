@@ -4,7 +4,7 @@ import {receiveQuestions} from '../actions/questions'
 import {setAuthedUser} from '../actions/authedUser'
 
 
-const AUTHED_ID = 'johndoe' 
+// const AUTHED_ID = 'johndoe' 
 getInitialData()
 
 //thunk action creator 
@@ -16,7 +16,7 @@ export function handleInitialData () {
         .then(({questions, users}) => {
             dispatch(receiveUsers(users));
             dispatch(receiveQuestions(questions));
-            dispatch(setAuthedUser(AUTHED_ID));
+            // dispatch(setAuthedUser(AUTHED_ID));
         })
     }
 }
