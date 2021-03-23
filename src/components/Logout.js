@@ -1,34 +1,39 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
-import Card from 'react-bootstrap/Card';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
+import { handleLogout } from "../actions/authedUser";
 
 class Logout extends Component {
-    state = {
-        redirect: false
-    }
 
-    render() {
+  handleSubmit = (e) => {
+    e.preventDefault();
+    this.props.dispatch(handleLogout());
+  };
 
-        return (
-            <div>
-                <h3 className="center">Logout</h3>
-                <Card>
-                    <Card.Body>
-                    <div className="center">
-                        <h3>You are logged out</h3>
-                    
-                    </div>
-                    </Card.Body>
-                </Card>    
+  render() {
+    return (
+      <div>
+        <h3 className="center">Logout</h3>
+        <Card>
+          <Card.Body>
+            <div className="center">
+              <h3>Push Logout to to exit the application</h3>
             </div>
-        )
-    }
+          </Card.Body>
+          <Button variant="primary" type="submit" onClick={this.handleSubmit}>
+            Logout
+          </Button>
+        </Card>
+      </div>
+    );
+  }
 }
 
 function mapStateToProps({ authedUser }) {
-    return {
-        authedUser
-    }
+  return {
+    authedUser,
+  };
 }
 
 export default connect(mapStateToProps)(Logout);
