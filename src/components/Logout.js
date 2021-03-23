@@ -18,7 +18,7 @@ class Logout extends Component {
         <Card>
           <Card.Body>
             <div className="center">
-              <h3>Push Logout to to exit the application</h3>
+              <h3>Push Logout to exit the application</h3>
             </div>
           </Card.Body>
           <Button variant="primary" type="submit" onClick={this.handleSubmit}>
