@@ -7,17 +7,27 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import {Link} from 'react-router-dom'
 
+
 class Dashboard extends Component {
+state = {
+  defaultTab: "Unanswered"
+}
 
-
+handleTab = (e) => {
+  this.setState(() => ({
+    defaultTab: e
+  }))
+}
   render() {
     console.log(this.unasweredQuestionIds);
 
     return (
       <div className="dashboard">
         <h3 className="center">Dashboard</h3>
-        <Tabs defaultActiveKey="profile" id="HomePage">
-          <Tab eventKey="Unanswered" title="Unanswered questions">
+        <Tabs defaultActiveKey="profile" id="HomePage"   activeKey={this.state.defaultTab}
+                onSelect={this.handleTab}>
+        
+          <Tab  for="Unanswered" eventKey="Unanswered" title="Unanswered questions">
             <div label="Unanswered">
               <ul className="questions-List">
                 {this.props.unansweredQuestionIds.map((id) => (
@@ -36,7 +46,7 @@ class Dashboard extends Component {
             </div>
           </Tab>
 
-          <Tab eventKey="Answered" title="Answered questions">
+          <Tab for="Answered" eventKey="Answered" title="Answered questions">
             <div label="Answered">
               <ul className="questions-List">
                 {this.props.answeredQuestionIds.map((id) => (
@@ -54,6 +64,7 @@ class Dashboard extends Component {
               </ul>
             </div>
           </Tab>
+
         </Tabs>
       </div>
     );
