@@ -1,9 +1,13 @@
 import React, { Component, Fragment } from "react";
-import { Route, BrowserRouter as Router } from "react-router-dom";
+import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import { connect } from "react-redux";
-import { handleInitialData } from "../actions/shared";
+import Navbar from "react-bootstrap/Navbar";
+import NavbarBrand from "react-bootstrap/NavbarBrand";
+import Container from 'react-bootstrap/Container'
 
-import Nav from "./Nav";
+
+import { handleInitialData } from "../actions/shared";
+import NavComponent from "./Nav";
 import Dashboard from "./Dashboard";
 import QuestionNew from "./QuestionNew";
 import Leaderboard from "./Leaderboard";
@@ -18,21 +22,19 @@ class App extends Component {
     this.props.dispatch(handleInitialData());
   }
 
-  // NBD: redirectToLogin
-
   render() {
     return (
       <Router>
         <Fragment>
           {/*right after router tag we have to pass only one tag (single child), but we are passing LoadingBar and div, for this use Fragment */}
-          {/* <LoadingBar /> */}
+        {/* <LoadingBar /> */}
           <div className="container">
-            <Nav authedUser={this.props.authedUser} />
-            {/* {this.props.loading === true ? null : this.props.authedUser === */}
+            <NavComponent authedUser={this.props.authedUser} />
+            {/* {this.props.loading === true ? null : this.props.authedUser === null*/}
             { this.props.authedUser === null
               ? ( <div><Route component={Login} /></div>) 
               : (
-                  <div>
+                  <Switch>
                     <Route path="/" exact component={Dashboard} />
                     <Route path="/new" component={QuestionNew} />
                     <Route path="/leaderboard" component={Leaderboard} />
@@ -43,14 +45,20 @@ class App extends Component {
                       questions={this.props.questions}
                     />
                     <Route component={PageNotFound} />
-                  </div>
+                  </Switch>
                 )           
             }
-            <footer>
-              <p className="footer">
-                Made by Valentina Olekhnovich
-              </p>
-            </footer>
+         
+             
+                  <Navbar  bg="primary" expand="lg" variant="dark">
+                        <Container>
+                          <NavbarBrand>
+                            <p > &copy; Copyright 2021 - Valentina Olekhnovich. </p> <p>All rights reserved.</p>
+                          </NavbarBrand>
+                        </Container>
+                  </Navbar>
+              
+      
           </div>
         </Fragment>
       </Router>
@@ -58,13 +66,11 @@ class App extends Component {
   }
 }
 
-function mapStateToProps({ authedUser }, { users, questions }) {
+function mapStateToProps({ authedUser }) {
   console.log(authedUser);
   return {
     // loading: authedUser === null,
-    users,
     authedUser,
-    questions,
   };
 }
 
