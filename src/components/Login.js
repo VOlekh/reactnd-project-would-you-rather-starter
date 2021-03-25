@@ -43,9 +43,9 @@ class Login extends Component {
               <Form.Group controlId="formBasicUsername">
                 <Form.Label>Username</Form.Label>
                 <Form.Control as="select" onChange={this.onLoginChange}>
-                  <option value="Select">Select user...</option>
+                  <option  value="Select">Select user...</option>
                   {Object.values(users).map((user) => (
-                    <option value={user.id}> {user.name} </option>
+                    <option key={user.id} value={user.id}> {user.name} </option>
                   ))}
                 </Form.Control>
               </Form.Group>
