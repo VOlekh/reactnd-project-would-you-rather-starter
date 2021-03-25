@@ -17,7 +17,6 @@ import Logout from "./Logout";
 import QuestionRoute from "./QuestionRoute";
 import PageNotFound from "./PageNotFound";
 import LoadingBar from "react-redux-loading";
-import banner from "../img/draw-banner-background-cute-cats-pink-pastel_45130-264.jpg";
 
 class App extends Component {
   componentDidMount() {
@@ -33,7 +32,7 @@ class App extends Component {
 
 
           <div className="container">
-            <Image alt="banner" src="https://www.freepik.com/premium-vector/draw-banner-background-cute-cats-pink-pastel_2620882.htm" fluid />
+            <Image alt="banner" src="../img/draw-banner-background-cute-cats-pink-pastel_45130-264.jpg" fluid />
             <NavComponent authedUser={this.props.authedUser} />
             {/* {this.props.loading === true ? null : this.props.authedUser === null*/}
             { this.props.authedUser === null
