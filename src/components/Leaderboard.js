@@ -1,8 +1,5 @@
 import React, { Component } from "react";
-import { formatDate, formatQuestion } from "../utils/helper";
-import Question from "./Question";
 import { connect } from "react-redux";
-import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Media from "react-bootstrap/Media";
 
@@ -54,24 +51,6 @@ class Leaderboard extends Component {
   }
 }
 
-// function mapStateToProps({ users}) {
-//   // let usersTotalScore =
-//   let questionsScore = Object.values(users).map((user) => ({
-//     scoreQustions: {user.questions}.length,
-//   }));
-//   console.log("mapStateProps/ leaderboard:", users)
-
-//   let answersScore = Object.values(users).map((user) => ({
-//     scoreAnswers: Object.keys(user.answeres).length,
-//   }));
-
-//   return {
-//     usersQuestionsScoreIDs:
-//     questionsScore
-//     .sort((a, b) => b.score - a.score)
-//     .map(({id})=>id),
-//   };
-// }
 function mapStateToProps({ users }) {
   console.log("mapStateProps/leaderbord:", users);
   return {

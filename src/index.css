@@ -57,7 +57,10 @@ code {
   text-align: center;
 }
 
-
+.active-nav {
+  color: #f0f0f0;
+  font-weight: bold;
+}
 /* answer text bold
 .active {
   font-weight: bold;

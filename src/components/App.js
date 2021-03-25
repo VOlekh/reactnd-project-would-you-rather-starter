@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import Navbar from "react-bootstrap/Navbar";
 import NavbarBrand from "react-bootstrap/NavbarBrand";
 import Container from 'react-bootstrap/Container'
+import Image from "react-bootstrap/Image";
 
 
 import { handleInitialData } from "../actions/shared";
@@ -16,6 +17,7 @@ import Logout from "./Logout";
 import QuestionRoute from "./QuestionRoute";
 import PageNotFound from "./PageNotFound";
 import LoadingBar from "react-redux-loading";
+import banner from "../img/draw-banner-background-cute-cats-pink-pastel_45130-264.jpg";
 
 class App extends Component {
   componentDidMount() {
@@ -26,9 +28,12 @@ class App extends Component {
     return (
       <Router>
         <Fragment>
-          {/*right after router tag we have to pass only one tag (single child), but we are passing LoadingBar and div, for this use Fragment */}
+        {/*right after router tag we have to pass only one tag (single child), but we are passing LoadingBar and div, for this use Fragment */}
         {/* <LoadingBar /> */}
+
+
           <div className="container">
+            <Image alt="banner" src="https://www.freepik.com/premium-vector/draw-banner-background-cute-cats-pink-pastel_2620882.htm" fluid />
             <NavComponent authedUser={this.props.authedUser} />
             {/* {this.props.loading === true ? null : this.props.authedUser === null*/}
             { this.props.authedUser === null
@@ -53,7 +58,8 @@ class App extends Component {
                   <Navbar  bg="primary" expand="lg" variant="dark">
                         <Container>
                           <NavbarBrand>
-                            <p > &copy; Copyright 2021 - Valentina Olekhnovich. </p> <p>All rights reserved.</p>
+                            <p> &copy; Copyright 2021 Valentina Olekhnovich</p> 
+                            <p>All rights reserved</p>
                           </NavbarBrand>
                         </Container>
                   </Navbar>
