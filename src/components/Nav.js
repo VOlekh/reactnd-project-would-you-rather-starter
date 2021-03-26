@@ -25,7 +25,7 @@ class  NavComponent extends Component {
               </Navbar.Collapse>
               <Navbar.Text>
                 <a className="nav-link d-sm-flex align-items-sm-center" href="#">
-                <div className="Name">Hi, {this.props.name}  !</div>
+                <div className="name">Hi, {this.props.name}!</div>
                   <img
                     src={this.props.avatar}
                     alt={`Avatar of ${this.props.name}`}

@@ -8,6 +8,10 @@ import Card from "react-bootstrap/Card";
 import Media from "react-bootstrap/Media";
 
 class QuestionViewPoll extends Component {
+
+  state = {
+    answer: "",
+  }
     
   onAnswerChange = (answer) => {
     console.log(answer);
@@ -67,7 +71,9 @@ class QuestionViewPoll extends Component {
                         variant="warning"
                         onClick={this.onAnswerSubmit}
                         type="submit"
-                        // disabled={this.state.optionOne === '' || this.state.optionTwo === ''}
+                        disabled={
+                          this.state.answer === ""
+                        }
                     >
                         Submit
                     </Button>

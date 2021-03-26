@@ -18,6 +18,7 @@ code {
 .banner{
 text-align: center;
 background-color: 	#FFC830;
+display: flex;
 }
 
 .banner-text{
@@ -31,22 +32,33 @@ font-weight: bold;
 }
 
 .nav-link{
-color: white;
+color:  dimgrey;
 margin-left: 10px;
 font-family: cursive;
 font-size: 20px;
 }
+
 .active-nav {
-  color: #f0f0f0;
   font-weight: bold;
   font-size: 22px;
   font-family: cursive;
 }
+
+.name{
+  margin: 10px;
+  font-size: 18px;
+}
+
 .container {
   max-width: 1000px;
   margin: 0 auto;
   padding: 10px;
-} 
+}
+
+h4{
+  font-family: cursive;
+  color: dimgrey;
+}
 
 .btn {
   text-transform: uppercase;
@@ -58,17 +70,20 @@ font-size: 20px;
   font-size: 16px;
   width: 250px;
   position: relative;
+  font-family: cursive;
 }
 
 .btn:hover {
   border-color: rgba(0,0,0,.5);
   text-decoration: none;
+  font-family: cursive;
 }
 
 .btn:focus {
   outline: 0;
   font-weight: 700;
   border-width: 2px;
+  font-family: cursive;
 }
 
 .center {
