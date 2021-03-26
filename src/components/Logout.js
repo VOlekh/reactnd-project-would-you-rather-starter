@@ -5,7 +5,6 @@ import Button from "react-bootstrap/Button";
 import { handleLogout } from "../actions/authedUser";
 
 class Logout extends Component {
-
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.dispatch(handleLogout());
@@ -13,19 +12,16 @@ class Logout extends Component {
 
   render() {
     return (
-      <div>
-        <h3 className="center">Logout</h3>
-        <Card>
-          <Card.Body>
-            <div className="center">
-              <h3>Push Logout to exit the application</h3>
-            </div>
-          </Card.Body>
-          <Button variant="primary" type="submit" onClick={this.handleSubmit}>
-            Logout
-          </Button>
-        </Card>
-      </div>
+      <Card className="card">
+        <Card.Body>
+          <div className="center">
+            <h5>Push LOGOUT to exit the application</h5>
+          </div>
+        </Card.Body>
+        <Button variant="warning" type="submit" onClick={this.handleSubmit}>
+          Logout
+        </Button>
+      </Card>
     );
   }
 }

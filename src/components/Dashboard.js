@@ -23,10 +23,8 @@ handleTab = (e) => {
 
     return (
       <div className="dashboard">
-        <h3 className="center">Dashboard</h3>
         <Tabs defaultActiveKey="profile" id="HomePage"   activeKey={this.state.defaultTab}
                 onSelect={this.handleTab}>
-        
           <Tab  for="Unanswered" eventKey="Unanswered" title="Unanswered questions">
             <div label="Unanswered">
               <ul className="questions-List">
@@ -36,7 +34,7 @@ handleTab = (e) => {
                       <Card.Body>
                         <Question id={id} />
                         <Link to={`/questions/${id}`}>
-                          <Button>View Poll</Button>
+                          <Button variant="warning">View Poll</Button>
                         </Link>
                       </Card.Body>
                     </Card>
@@ -55,7 +53,7 @@ handleTab = (e) => {
                     <Card.Body>
                         <Question id={id} />
                         <Link to={`/questions/${id}`}>
-                          <Button>Details</Button>
+                          <Button variant="warning">Details</Button>
                         </Link>
                       </Card.Body>
                     </Card>

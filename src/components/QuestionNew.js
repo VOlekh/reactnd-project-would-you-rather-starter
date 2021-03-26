@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { handleSaveQuestion } from '../actions/questions'
-import Button from 'react-bootstrap/Button'
-import Form from 'react-bootstrap/Form'
-import Card from 'react-bootstrap/Card'
-import { Redirect } from 'react-router-dom'
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { handleSaveQuestion } from "../actions/questions";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+import Card from "react-bootstrap/Card";
+import { Redirect } from "react-router-dom";
 
 class QuestionNew extends Component {
   state = {
@@ -15,14 +15,14 @@ class QuestionNew extends Component {
   };
 
   onOptionOneChange = (e1) => {
-    //change the state 
+    //change the state
     const optionOneText = e1.target.value;
-    this.setState(() => ({optionOneText}));
+    this.setState(() => ({ optionOneText }));
   };
   onOptionTwoChange = (e2) => {
-    //change the state 
+    //change the state
     const optionTwoText = e2.target.value;
-    this.setState(() => ({optionTwoText}));
+    this.setState(() => ({ optionTwoText }));
   };
 
   onNewQuestionSubmit = (e) => {
@@ -33,8 +33,10 @@ class QuestionNew extends Component {
 
     console.log("New question: ", optionOneText, optionTwoText);
 
-    //passing values to dispatch 
-    dispatch(handleSaveQuestion({ optionOneText, optionTwoText, author: authedUser }));
+    //passing values to dispatch
+    dispatch(
+      handleSaveQuestion({ optionOneText, optionTwoText, author: authedUser })
+    );
     // reset to empty string
     this.setState(() => ({
       optionOneText: "",
@@ -47,16 +49,12 @@ class QuestionNew extends Component {
   // if id is a thing, then toHome is false, if not - true
   //toHome: id ? false : true,
   render() {
-   
-
     return (
       <div>
-        <h3 className="center">Compose new Question</h3>
-        {/* //invoked handle submit method */}
-
         <Card>
           <Card.Body>
-          <h4 className="center">Would you rather</h4>
+            <h4 className="center">Compose new Question</h4>
+            <h5 >Would you rather...</h5>
             <Form>
               <Form.Group controlId="OptionOne">
                 <Form.Label>Option one</Form.Label>
@@ -81,12 +79,14 @@ class QuestionNew extends Component {
             </Form>
           </Card.Body>
           <Button
-                variant="primary"
-                onClick={this.onNewQuestionSubmit}
-                type="submit"
-                disabled={this.state.optionOneText === '' || this.state.optionTwoText === ''}
-              >
-                Submit
+            variant="warning"
+            onClick={this.onNewQuestionSubmit}
+            type="submit"
+            disabled={
+              this.state.optionOneText === "" || this.state.optionTwoText === ""
+            }
+          >
+            Submit
           </Button>
         </Card>
       </div>
@@ -96,7 +96,7 @@ class QuestionNew extends Component {
 
 function mapStateToProps({ users, authedUser }) {
   return {
-    authedUser
+    authedUser,
   };
 }
 

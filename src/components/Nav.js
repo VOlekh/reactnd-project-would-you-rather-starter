@@ -1,32 +1,22 @@
 import React, { Component } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import Image from "react-bootstrap/Image";
-import Button from "react-bootstrap/Button";
-// import "../CSS/nav.css";
-import { formatDate, formatQuestion } from "../utils/helper";
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
-import Dropdown from "react-bootstrap/Dropdown";
-import DropdownButton from "react-bootstrap/DropdownButton";
-import NavbarBrand from "react-bootstrap/NavbarBrand";
-import Container from 'react-bootstrap/Container'
+
 
 class  NavComponent extends Component { 
-//  const { authedUser, name, avatar } = this.props;
-  
-    // console.log(props.authedUser);
-    // console.log("Authed", props.authedUser === null);
+
   render() {
     return (
       <div>
         { this.props.authedUser === null
           ? ( null ) 
           : (
-            <Navbar fixed="up"  bg="primary" expand="lg" variant="dark">
-              {/* <Navbar.Brand href="#home">Would you rather...</Navbar.Brand> */}
+            <Navbar fixed="up"  bg="dark" expand="lg" variant="dark">
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse id="justify-content-end">
+              <Navbar.Brand to="/" exact activeClassName="active-nav">Would you rather...</Navbar.Brand>
                 <Nav className="mr-auto">
                   <NavLink to="/" exact activeClassName="active-nav">Home</NavLink>
                   <NavLink to="/new" activeClassName="active-nav">New Question</NavLink>
@@ -45,19 +35,13 @@ class  NavComponent extends Component {
                     height="45"
                   />
                 </a>
-              </Navbar.Text>
-                   
-                
-              
+              </Navbar.Text>  
             </Navbar>
           )
        }
-
        </div>
     );
   };
-
-
 };
 
 

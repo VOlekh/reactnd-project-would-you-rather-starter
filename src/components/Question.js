@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { formatDate, formatQuestion } from "../utils/helper";
-import Card from "react-bootstrap/Card";
 import Media from "react-bootstrap/Media";
 import Truncate from "react-truncate";
 
@@ -13,37 +12,32 @@ class Question extends Component {
     const { name, avatar, timestamp, optionOne, optionTwo } = question;
 
     return (
-      <Card>
-        <Card.Body>
-          <div>
-            <Media>
-              <img
-                width={64}
-                height={64}
-                className="mr-3"
-                src={avatar}
-                alt={`Avatar of ${name}`}
-              />
-              <Media.Body>
-                <h5>{name}</h5>
-                <p>{formatDate(timestamp)}</p>
-              </Media.Body>
-            </Media>
-            <h4>Would you rather ...</h4>
-            <div>
-              <Truncate lines={1} ellipsis={<span>... </span>}>
-                ...{optionOne.text}...
-              </Truncate>
-            </div>
-
-            <div>
-              <Truncate lines={1} ellipsis={<span>... </span>}>
-                ...{optionTwo.text}...
-              </Truncate>
-            </div>
-          </div>
-        </Card.Body>
-      </Card>
+      <div>
+        <Media>
+          <img
+            width={64}
+            height={64}
+            className="mr-3"
+            src={avatar}
+            alt={`Avatar of ${name}`}
+          />
+          <Media.Body>
+            <h5>{name}</h5>
+            <p>{formatDate(timestamp)}</p>
+          </Media.Body>
+        </Media>
+        <h4>Would you rather ...</h4>
+        <div>
+          <Truncate lines={1} ellipsis={<span>... </span>}>
+            ...{optionOne.text}...
+          </Truncate>
+        </div>
+        <div>
+          <Truncate lines={1} ellipsis={<span>... </span>}>
+            ...{optionTwo.text}...
+          </Truncate>
+        </div>
+      </div>
     );
   }
 }

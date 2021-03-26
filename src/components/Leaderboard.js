@@ -19,7 +19,6 @@ class Leaderboard extends Component {
     // console.log("scoreQustions:", scoreQustions )
     return (
       <div className="leaderboard">
-        <h3 className="center">Leaderboard</h3>
         <ul className="leaderbord_list">
           {users.map((user) => (
             <Card className="leaderboard-list" key={user.id}>
@@ -37,7 +36,6 @@ class Leaderboard extends Component {
                       <h5>{user.name}</h5>
                     </Media.Body>
                   </Media>
-
                   <div>Score questions asked: {user.questions.length}</div>
                   <div>Score questions answered: {Object.keys(user.answers).length}</div>
                   <div>TotalScore:{" "} {user.questions.length + Object.keys(user.answers).length}</div>

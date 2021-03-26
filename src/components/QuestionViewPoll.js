@@ -64,10 +64,10 @@ class QuestionViewPoll extends Component {
                         <RadioButton value="optionTwo">{optionTwo.text}</RadioButton>
                     </RadioGroup>
                     <Button
-                        variant="primary"
+                        variant="warning"
                         onClick={this.onAnswerSubmit}
                         type="submit"
-                        // disabled={this.state.optionOne === '' && this.state.optionTwo === ''}
+                        // disabled={this.state.optionOne === '' || this.state.optionTwo === ''}
                     >
                         Submit
                     </Button>

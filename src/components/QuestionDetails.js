@@ -17,6 +17,7 @@ class QuestionDetails extends Component {
     //   the text of the option;
     //                     the number of people who voted for that option;
     //                     the percentage of people who voted for that option.
+    //all users -100%
 
     render(progressInstanceVoted) {
         const { question, authedUser } = this.props;
@@ -63,9 +64,24 @@ class QuestionDetails extends Component {
         let url = window.location.pathname;
         let id = url.substring(url.lastIndexOf('/') + 1);
         const question = questions[id];
+        const optionOne = question.optionOne.text
+        const optionTwo = question.optionTwo.text
+        let authedUserAnswer = null
+        authedUserAnswer = users[authedUser].answers[question.id]
+    
+        const optionOneVote = question.optionOne.votes.length
+        const optionTwoVote = question.optionTwo.votes.length
+
+    
+  
         console.log(authedUser);
         return {
             authedUser,
+            optionOne,
+            optionTwo,
+            authedUserAnswer,
+            optionOneVote,
+            optionTwoVote,
             question: formatQuestion(question, users[question.author], authedUser),
       };
     }

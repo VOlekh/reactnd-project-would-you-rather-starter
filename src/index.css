@@ -10,25 +10,31 @@ body {
   color: #252525;
 }
 
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
+.banner{
+text-align: center;
+background-color: 	#FFC830;
+}
 
+.banner-text{
+text-align: center;
+color: white;
+padding-top: 40px;
+padding-bottom: 0px;
+font-family: cursive;
+font-size: 40px;
+font-weight: bold;
+}
 
-
-/* a {
-  text-decoration: none;
-  color: #252525;
-} */
-
-/* .container {
+.container {
   max-width: 1000px;
   margin: 0 auto;
   padding: 10px;
-} */
+} 
 
 .btn {
   text-transform: uppercase;
@@ -55,26 +61,18 @@ code {
 
 .center {
   text-align: center;
+  margin: 20px;
+}
+
+.card{
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .active-nav {
   color: #f0f0f0;
   font-weight: bold;
-}
-/* answer text bold
-.active {
-  font-weight: bold;
-} */
-
-.nav ul {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  text-decoration: none;
-}
-
-.nav li:first-child {
-  padding-left: 0;
+  font-size: 20px;
 }
 
 ul {
@@ -93,91 +91,22 @@ li {
   margin: 10px;
 }
 
-/* .question {
+/* Place the navbar at the bottom of the page, and make it stick */
+.navbar-fixed-bottom {
+  background-color: #333;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
   width: 100%;
-  max-width: 590px;
-  padding: 10px;
-  display: flex;
-  margin: 0 auto;
-  border: 1px solid #dad7d7;
-  border-radius: 3px;
-  cursor: pointer;
-} */
+}
 
-/* .question-info {
+.question-info {
   margin: 10px;
   display: flex;
   flex-direction: column;
-} */
-
-/* Hacky but less typing in the video */
-/* .question-info > div > span:first-child {
-  font-weight: bold;
-  margin-right: 5px;
 }
-.question-info > div > span:nth-child(2) {
-  color: #969696;
-  font-size: 16px;
-}
-.question-info > div > div {
-  color: #969696;
-  font-size: 15px;
-}
-.question-info > div > p {
-  font-size: 18px;
-  margin: 10px 0;
-}
-.question-icons {
-  display: flex;
-  align-items: center;
-}
-.question-icons > span {
-  color: #969696;
-  margin: 0 15px 0 5px;
-  font-size: 18px !important;
-}
-.question-icon {
-  font-size: 27px;
-  color: #697784;
-}
-.question-icon:hover {
-  color: #00b5d6;
-  cursor: pointer;
-} */
-
-.question-card-name-date {
-  color: #00b5d6;
-}
-
-
-
-
-/* .new-question {
-  width: 100%;
-  max-width: 590px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-} */
-
-/* .textarea {
-  border-radius: 4px;
-  border: 1px solid #dad7d7;
-  padding: 10px;
-  font-size: 15px;
-  margin: 20px;
-  height: 100px;
-} */
-
-/* .question-length {
-  text-align: right;
-  margin-top: 10px;
-  font-size: 20px;
-  color: #C3392A;
-} */
 
 .leaderboard-list
 {
   margin-top: 20px;
-
 }
