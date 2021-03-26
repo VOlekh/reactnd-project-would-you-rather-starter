@@ -60,6 +60,12 @@ h4{
   color: dimgrey;
 }
 
+h6{
+  font-family: cursive;
+  color: dimgrey;
+  margin-left: 30px;
+}
+
 .btn {
   text-transform: uppercase;
   margin: 35px auto;
@@ -119,8 +125,10 @@ li {
   background-color: #333;
   overflow: hidden;
   position: fixed;
+ 
   bottom: 0;
   width: 100%;
+  text-align: center;
 }
 
 .question-info {

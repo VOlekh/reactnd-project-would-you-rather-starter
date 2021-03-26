@@ -64,8 +64,8 @@ class App extends Component {
             <Navbar className="navbar-fixed-bottom" bg="dark" expand="lg" variant="dark">
               <Container>
                 <NavbarBrand>
-                  <p> &copy; Copyright 2021 Valentina Olekhnovich</p>
-                  <p>All rights reserved</p>
+                  <h6> &copy; Copyright 2021 Valentina Olekhnovich</h6>
+                  <h6>All rights reserved</h6>
                 </NavbarBrand>
               </Container>
               
