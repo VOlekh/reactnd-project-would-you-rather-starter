@@ -30,6 +30,18 @@ font-size: 40px;
 font-weight: bold;
 }
 
+.nav-link{
+color: white;
+margin-left: 10px;
+font-family: cursive;
+font-size: 20px;
+}
+.active-nav {
+  color: #f0f0f0;
+  font-weight: bold;
+  font-size: 22px;
+  font-family: cursive;
+}
 .container {
   max-width: 1000px;
   margin: 0 auto;
@@ -69,11 +81,7 @@ font-weight: bold;
   margin-bottom: 10px;
 }
 
-.active-nav {
-  color: #f0f0f0;
-  font-weight: bold;
-  font-size: 20px;
-}
+
 
 ul {
   padding-left: 0;

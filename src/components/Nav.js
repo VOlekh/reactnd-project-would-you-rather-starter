@@ -16,12 +16,11 @@ class  NavComponent extends Component {
             <Navbar fixed="up"  bg="dark" expand="lg" variant="dark">
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse id="justify-content-end">
-              <Navbar.Brand to="/" exact activeClassName="active-nav">Would you rather...</Navbar.Brand>
                 <Nav className="mr-auto">
-                  <NavLink to="/" exact activeClassName="active-nav">Home</NavLink>
-                  <NavLink to="/new" activeClassName="active-nav">New Question</NavLink>
-                  <NavLink to="/leaderboard" activeClassName="active-nav">Leaderboard</NavLink>
-                  <NavLink to="/logout" activeClassName="active-nav">Logout</NavLink>
+                  <NavLink to="/" exact activeClassName="active-nav" className="nav-link">Home</NavLink>
+                  <NavLink to="/new" activeClassName="active-nav" className="nav-link">New Question</NavLink>
+                  <NavLink to="/leaderboard" activeClassName="active-nav"className="nav-link">Leaderboard</NavLink>
+                  <NavLink to="/logout" activeClassName="active-nav"className="nav-link">Logout</NavLink>
                 </Nav> 
               </Navbar.Collapse>
               <Navbar.Text>
