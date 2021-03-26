@@ -26,12 +26,11 @@ class QuestionDetails extends Component {
         let url = window.location.pathname;
         let id = url.substring(url.lastIndexOf('/') + 1);
     
-        return (
-            <div className="question-details">
-            <h3 className="center">Question Details</h3>
-                <Card>
-                    <Card.Body>
-                    <div>
+        return (  
+            <Card>
+                <Card.Body>
+                <h4 className="center">Question Details</h4>
+                <div>
                     <Media>
                         <img
                             width={64}
@@ -44,18 +43,16 @@ class QuestionDetails extends Component {
                             <h5>{name}</h5>
                             <p>{formatDate(timestamp)}</p>
                         </Media.Body>
-                        </Media>
-    
-                        <h3>Would you rather ...</h3>
-                        <div>
+                    </Media>
+
+                    <h4>Would you rather ...</h4>
+                    <div>
                         <p>  the number of people who voted for that option;
-                        the percentage of people who voted for that option.</p>
-                                            
-                        </div>
+                        the percentage of people who voted for that option.</p>                   
                     </div>
-                    </Card.Body>
-                </Card>
-            </div>    
+                </div>
+                </Card.Body>
+            </Card>
         );
       }
     }

@@ -42,46 +42,45 @@ class QuestionViewPoll extends Component {
     let id = url.substring(url.lastIndexOf('/') + 1);
 
     return (
-        <div className="view-poll">
-        <h3 className="center">View Poll</h3>
             <Card>
-                <Card.Body>
-                <div>
-                <Media>
-                    <img
-                        width={64}
-                        height={64}
-                        className="mr-3"
-                        src={avatar}
-                        alt={`Avatar of ${name}`} 
-                    />
-                    <Media.Body >
-                        <h5>{name}</h5>
-                        <p>{formatDate(timestamp)}</p>
-                    </Media.Body>
+              <Card.Body>
+                <h4 className="center">View Poll</h4>
+                  <div>
+                    <Media>
+                        <img
+                            width={64}
+                            height={64}
+                            className="mr-3"
+                            src={avatar}
+                            alt={`Avatar of ${name}`} 
+                        />
+                        <Media.Body >
+                            <h5>{name}</h5>
+                            <p>{formatDate(timestamp)}</p>
+                        </Media.Body>
                     </Media>
 
-                    <h3>Would you rather ...</h3>
+                    <h4>Would you rather ...</h4>
                     <div>
-                    <RadioGroup onChange={this.onAnswerChange}>
-                        <RadioButton value="optionOne">{optionOne.text}</RadioButton>
-                        <RadioButton value="optionTwo">{optionTwo.text}</RadioButton>
-                    </RadioGroup>
-                    <Button
-                        variant="warning"
-                        onClick={this.onAnswerSubmit}
-                        type="submit"
-                        disabled={
-                          this.state.answer === ""
-                        }
-                    >
-                        Submit
-                    </Button>
+                      <RadioGroup onChange={this.onAnswerChange}>
+                          <RadioButton value="optionOne">{optionOne.text}</RadioButton>
+                          <RadioButton value="optionTwo">{optionTwo.text}</RadioButton>
+                      </RadioGroup>
+                      <Button
+                          variant="warning"
+                          onClick={this.onAnswerSubmit}
+                          type="submit"
+                          disabled={
+                            this.state.answer === ""
+                          }
+                      >
+                          Submit
+                      </Button>
                     </div>
-                </div>
+
+                  </div>
                 </Card.Body>
-            </Card>
-        </div>    
+            </Card>  
     );
   }
 }
