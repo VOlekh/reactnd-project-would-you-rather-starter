@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react";
-import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
+import { Route, Redirect, BrowserRouter as Router, Switch } from "react-router-dom";
 import { connect } from "react-redux";
 import Navbar from "react-bootstrap/Navbar";
 import NavbarBrand from "react-bootstrap/NavbarBrand";
@@ -44,6 +44,7 @@ class App extends Component {
             {/* {this.props.loading === true ? null : this.props.authedUser === null*/}
             {this.props.authedUser === null ? (
               <div>
+                <Redirect path='/logout' to='/' />
                 <Route component={Login} />
               </div>
             ) : (
@@ -57,15 +58,27 @@ class App extends Component {
                   component={QuestionRoute}
                   questions={this.props.questions}
                 />
-                <Route component={PageNotFound} />
+                <Route path="/404" component={PageNotFound} />
               </Switch>
             )}
 
             <Navbar className="navbar-fixed-bottom" bg="dark" expand="lg" variant="dark">
               <Container>
                 <NavbarBrand>
+                  <div>
                   <h6> &copy; Copyright 2021 Valentina Olekhnovich</h6>
                   <h6>All rights reserved</h6>
+                  </div>
+                  <div>
+                  {/* <ul class="social-network social-circle">
+                    <li><a href="#" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a></li>
+                    <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
+                    <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                  </ul> */}
+                  </div>
+                 
                 </NavbarBrand>
               </Container>
               

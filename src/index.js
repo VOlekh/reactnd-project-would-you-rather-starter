@@ -15,6 +15,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
   crossorigin="anonymous"
 />
 
+
 const store = createStore(reducer, middleware)
 
 ReactDOM.render(

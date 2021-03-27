@@ -36,11 +36,14 @@ class Leaderboard extends Component {
                       <h5>{user.name}</h5>
                     </Media.Body>
                   </Media>
-                  <div>Score questions asked: {user.questions.length}</div>
-                  <div>Score questions answered: {Object.keys(user.answers).length}</div>
-                  <div>TotalScore:{" "} {user.questions.length + Object.keys(user.answers).length}</div>
+                  <hr/>
+                  <div>Questions asked: {user.questions.length}</div>
+                  <div>Questions answered: {Object.keys(user.answers).length}</div>
                 </div>
               </Card.Body>
+              <Card.Footer>
+                <small className="text-muted">Total score:{" "} {user.questions.length + Object.keys(user.answers).length}</small>
+              </Card.Footer>
             </Card>
           ))}
         </ul>

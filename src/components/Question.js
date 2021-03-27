@@ -26,6 +26,7 @@ class Question extends Component {
             <p>{formatDate(timestamp)}</p>
           </Media.Body>
         </Media>
+        <hr/>
         <h4>Would you rather ...</h4>
         <div>
           <Truncate lines={1} ellipsis={<span>... </span>}>
