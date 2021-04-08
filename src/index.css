@@ -126,8 +126,6 @@ hr {
   margin-bottom: 10px;
 }
 
-
-
 ul {
   padding-left: 0;
 }
@@ -161,11 +159,31 @@ li {
   flex-direction: column;
 }
 
-.leaderboard-list
-{
+.leaderboard-list {
   margin-top: 20px;
 }
 
+.col-text{
+  display: table-cell;
+  vertical-align: middle;
+  font-family: cursive;
+  color: dimgrey;
+  margin: 10px;
+}
+
+.row{
+  margin: 20px;
+}
+
+div.progress {
+  display: flex;
+  height: 40px;
+  overflow: hidden;
+  border-radius: 0rem;
+  font-size: .99rem;
+  background-color: #e9ecef;
+
+}
 
 /* Bootstrap Social Icons https://embed.plnkr.co/plunk/LpJLnT */
 

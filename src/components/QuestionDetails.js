@@ -1,4 +1,4 @@
-import React, { Component,Fragment} from "react";
+import React, { Component, Fragment} from "react";
 import { connect } from "react-redux";
 import { formatDate, formatQuestion } from "../utils/helper";
 
@@ -7,7 +7,9 @@ import ProgressBar from "react-bootstrap/ProgressBar";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Media from "react-bootstrap/Media";
-
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
 class QuestionDetails extends Component {
 
@@ -45,32 +47,28 @@ class QuestionDetails extends Component {
                         </Media.Body>
                     </Media>
                     <hr/>
-                    <h4>Would you rather ...</h4>
-                    {/* 
-                    {this.props.authedUserAnswer === 'optionOne'
-                        ? <Fragment>
-                            <div>You voted for option: {this.state.optionOneText}</div>
-                            <div>The number of people who voted for that option: {this.state.optionOneVote}</div>
-                            <div>The percentage of people who voted for that option: {this.state.optionOnePercentageVoted}</div>
-                            <div>The percentage:<ProgressBar optionOnePercentageVoted={optionOnePercentageVoted} label={`${optionOnePercentageVoted}%`} /> </div>
-                        </Fragment>
+                    
+                    
+                    {this.props.authedUserAnswer === "optionOne"
+                        ? <Container>
+                            <h4>Would you rather {this.props.optionOneText}</h4>
+                            <Row><Col>The number of people who voted for that option:</Col> <Col className="col-text">{this.props.optionOneVote}</Col></Row>
+                            <Row><Col>The percentage of people who voted for that option: </Col> <Col className="col-text">{`${Math.round(this.props.optionOnePercentageVoted)}%`}</Col></Row>
+                            <div className= "progress-bar"><ProgressBar now={Math.round(this.props.optionOnePercentageVoted)} label={`${Math.round(this.props.optionOnePercentageVoted)}%`} /> </div>
+                        </Container>
 
-                        : <Fragment>
-                            <div>You voted for option: {this.state.optionTwoText}</div>
-                            <div>The number of people who voted for that option: {this.state.optionTwoVote}</div>
-                            <div>The percentage of people who voted for that option: {this.state.optionTwoPercentageVoted}</div>
-                            <div>The percentage:<ProgressBar optionTwoPercentageVoted={optionTwoPercentageVoted} label={`${optionTwoPercentageVoted}%`} /> </div>
-                        </Fragment>
+                        : <Container>
+                            <h4>Would you rather {this.props.optionTwoText}</h4>
+                            <Row><Col>The number of people who voted for that option:</Col> <Col className="col-text">{this.props.optionTwoVote}</Col></Row>
+                            <Row><Col>The percentage of people who voted for that option: </Col> <Col className="col-text">{`${Math.round(this.props.optionTwoPercentageVoted)}%`}</Col></Row>
+                            <div className= "progress-bar"><ProgressBar now={Math.round(this.props.optionTwoPercentageVoted)} label={`${Math.round(this.props.optionTwoPercentageVoted)}%`} /> </div>
+                        </Container>
                     }
-                   */}
+                   
             
                 </div>
               </Card.Body>
-              <Card.Footer>
-                {/* <small className="text-muted">
-                    The percentage:<ProgressBar optionOnePercentageVoted={optionOnePercentageVoted} label={`${optionOnePercentageVoted}%`} />;
-                </small> */}
-              </Card.Footer>
+          
             </Card>
         );
     }
@@ -81,25 +79,33 @@ class QuestionDetails extends Component {
         let url = window.location.pathname;
         let id = url.substring(url.lastIndexOf('/') + 1);
 
-        const optionOne = questions[id].optionOne
-        const optionTwo = questions[id].optionTwo
+        const question = questions[id];
+
+        const optionOne = question.optionOne
+        const optionTwo = question.optionTwo
      
-        const optionOneText = questions[id].optionOne.text
-        const optionTwoText = questions[id].optionTwo.text
+        const optionOneText = question.optionOne.text
+        const optionTwoText = question.optionTwo.text
         const authedUserAnswer = users[authedUser].answers[id]
     
-        const optionOneVote = questions[id].optionOne.votes.length
-        const optionTwoVote = questions[id].optionTwo.votes.length
+        const optionOneVote = question.optionOne.votes.length
+        const optionTwoVote = question.optionTwo.votes.length
+        const totalVotes = optionOneVote + optionTwoVote
 
-        const optionOnePercentageVoted = (optionOneVote*100)/users.length
-        const optionTwoPercentageVoted = (optionTwoVote*100)/users.length
+        const optionOnePercentageVoted = (optionOneVote/totalVotes)*100
+        const optionTwoPercentageVoted = (optionTwoVote/totalVotes)*100
 
-    
-  
-        console.log(authedUser);
+        console.log("Question in QuestionDetails:", question);
+        console.log("AuthedUserAnswer:", authedUserAnswer);
+        console.log("Users.size:", users.size);
+
         return {
+            question: question
+           // add a check to format the question only if the question is not undefined.
+              ? formatQuestion(question, users[question.author], authedUser)
+              : null,
+
             authedUser,
-            question: formatQuestion(questions[id], users[questions[id].author], authedUser),
             optionOneText,
             optionTwoText,
             optionOne,

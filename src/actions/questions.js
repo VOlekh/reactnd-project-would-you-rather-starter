@@ -44,7 +44,7 @@ export function handleSaveQuestion(question) {
   }
 }
 
-// asyncronouseaction creator responsible for invoking saveQuestionAnswer, dispatching (thunk action creator)
+// asyncronouse action creator responsible for invoking saveQuestionAnswer, dispatching (thunk action creator)
 export function handleQuestionAnswer(info) {
     console.log(info)
     return (dispatch) => {
