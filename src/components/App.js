@@ -15,8 +15,11 @@ import Login from "./Login";
 import Logout from "./Logout";
 import QuestionRoute from "./QuestionRoute";
 import PageNotFound from "./PageNotFound";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 import LoadingBar from "react-redux-loading";
 import banner from "../img/draw-banner-background-cute-cats-yellow.png"
+import { faFacebook, faLinkedinIn, faTwitter } from "@fortawesome/free-brands-svg-icons";
 //https://www.shutterstock.com/image-vector/cat-set-popcorn-french-fries-soda-1818755765
 
 class App extends Component {
@@ -70,6 +73,12 @@ class App extends Component {
                   <h6>All rights reserved</h6>
                   </div>
                   <div>
+                  <ul className="social-network social-circle">
+                  <li><FontAwesomeIcon icon={faFacebook} /></li>
+                  <li><FontAwesomeIcon icon={faLinkedinIn} /></li>
+                  <li><FontAwesomeIcon icon={faTwitter} /></li>
+                  </ul>
+
                   {/* <ul class="social-network social-circle">
                     <li><a href="#" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a></li>
                     <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>

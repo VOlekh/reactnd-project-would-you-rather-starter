@@ -38,10 +38,19 @@ font-family: cursive;
 font-size: 20px;
 }
 
+.navbar-brand {
+  display: block;
+  margin: 0 auto !important;
+}
+
 .active-nav {
   font-weight: bold;
   font-size: 22px;
   font-family: cursive;
+}
+
+.nav.nav.nav-tabs{
+  margin-top: 20px;
 }
 
 .name{

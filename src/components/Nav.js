@@ -13,8 +13,9 @@ class  NavComponent extends Component {
         { this.props.authedUser === null
           ? ( null ) 
           : (
-            <Navbar fixed="up"  bg="dark" expand="lg" variant="dark">
-              <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar fixed="up"  bg="dark" expand="lg" variant="dark" className=" align-items-baseline">
+              <div className="d-flex flex-column align-items-baseline">
+              <Navbar.Toggle aria-controls="basic-navbar-nav" className=""/>
               <Navbar.Collapse id="justify-content-end">
                 <Nav className="mr-auto">
                   <NavLink to="/" exact activeClassName="active-nav" className="nav-link">Home</NavLink>
@@ -23,8 +24,9 @@ class  NavComponent extends Component {
                   <NavLink to="/logout" activeClassName="active-nav"className="nav-link">Logout</NavLink>
                 </Nav> 
               </Navbar.Collapse>
-              <Navbar.Text>
-                <a className="nav-link d-sm-flex align-items-sm-center" href="#">
+              </div>
+              <Navbar.Text className="d-flex">
+               <a className="nav-link d-flex align-items-sm-center" href="#">
                 <div className="name">Hi, {this.props.name}!</div>
                   <img
                     src={this.props.avatar}

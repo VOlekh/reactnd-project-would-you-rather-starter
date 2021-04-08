@@ -25,7 +25,7 @@ handleTab = (e) => {
       <div className="dashboard">
         <Tabs defaultActiveKey="profile" id="HomePage"   activeKey={this.state.defaultTab}
                 onSelect={this.handleTab}>
-          <Tab  for="Unanswered" eventKey="Unanswered" title="Unanswered questions">
+          <Tab  htmlFor="Unanswered" eventKey="Unanswered" title="Unanswered questions">
             <div label="Unanswered">
               <ul className="questions-List">
                 {this.props.unansweredQuestionIds.map((id) => (
@@ -44,7 +44,7 @@ handleTab = (e) => {
             </div>
           </Tab>
 
-          <Tab for="Answered" eventKey="Answered" title="Answered questions">
+          <Tab htmlFor="Answered" eventKey="Answered" title="Answered questions">
             <div label="Answered">
               <ul className="questions-List">
                 {this.props.answeredQuestionIds.map((id) => (

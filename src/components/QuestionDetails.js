@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React, { Component,Fragment} from "react";
 import { connect } from "react-redux";
 import { formatDate, formatQuestion } from "../utils/helper";
-import { RadioGroup, RadioButton } from "react-radio-buttons";
-import { handleQuestionAnswer } from "../actions/questions";
+
+//import { handleQuestionAnswer } from "../actions/questions";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
@@ -22,7 +22,7 @@ class QuestionDetails extends Component {
     render() {
         const { question, authedUser } = this.props;
         console.log(authedUser);
-        const { name, avatar, timestamp, optionOne, optionTwo } = question;
+        const { name, avatar, timestamp, optionOne, optionTwo} = question;
         let url = window.location.pathname;
         let id = url.substring(url.lastIndexOf('/') + 1);
     
@@ -46,9 +46,23 @@ class QuestionDetails extends Component {
                     </Media>
                     <hr/>
                     <h4>Would you rather ...</h4>
-                    {/* <div>You voted for option: {this.state.optionOne}</div>
-                    <div>The number of people who voted for that option: {this.state.optionOneVote}</div>
-                    <div>The percentage of people who voted for that option: {this.state.optionOnePercentageVoted}</div> */}
+                    {/* 
+                    {this.props.authedUserAnswer === 'optionOne'
+                        ? <Fragment>
+                            <div>You voted for option: {this.state.optionOneText}</div>
+                            <div>The number of people who voted for that option: {this.state.optionOneVote}</div>
+                            <div>The percentage of people who voted for that option: {this.state.optionOnePercentageVoted}</div>
+                            <div>The percentage:<ProgressBar optionOnePercentageVoted={optionOnePercentageVoted} label={`${optionOnePercentageVoted}%`} /> </div>
+                        </Fragment>
+
+                        : <Fragment>
+                            <div>You voted for option: {this.state.optionTwoText}</div>
+                            <div>The number of people who voted for that option: {this.state.optionTwoVote}</div>
+                            <div>The percentage of people who voted for that option: {this.state.optionTwoPercentageVoted}</div>
+                            <div>The percentage:<ProgressBar optionTwoPercentageVoted={optionTwoPercentageVoted} label={`${optionTwoPercentageVoted}%`} /> </div>
+                        </Fragment>
+                    }
+                   */}
             
                 </div>
               </Card.Body>
@@ -66,9 +80,12 @@ class QuestionDetails extends Component {
     function mapStateToProps({ authedUser, users, questions }) {
         let url = window.location.pathname;
         let id = url.substring(url.lastIndexOf('/') + 1);
+
+        const optionOne = questions[id].optionOne
+        const optionTwo = questions[id].optionTwo
      
-        const optionOne = questions[id].optionOne.text
-        const optionTwo = questions[id].optionTwo.text
+        const optionOneText = questions[id].optionOne.text
+        const optionTwoText = questions[id].optionTwo.text
         const authedUserAnswer = users[authedUser].answers[id]
     
         const optionOneVote = questions[id].optionOne.votes.length
@@ -83,6 +100,8 @@ class QuestionDetails extends Component {
         return {
             authedUser,
             question: formatQuestion(questions[id], users[questions[id].author], authedUser),
+            optionOneText,
+            optionTwoText,
             optionOne,
             optionTwo,
             authedUserAnswer,
