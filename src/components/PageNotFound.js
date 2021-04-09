@@ -8,7 +8,7 @@ function PageNotFound() {
     
     return (
         <div className="center">
-            <p>404 Page { path } doesn't exist.</p>
+    
             <img
                 width={250}
                 className="rounded-circle"
