@@ -53,6 +53,7 @@ class App extends Component {
             ) : (
               <Switch>
                 <Route path="/" exact component={Dashboard} />
+                <Route path="/login" exact component={Login} />
                 <Route path="/new" component={QuestionNew} />
                 <Route path="/leaderboard" component={Leaderboard} />
                 <Route path="/logout" component={Logout} />
