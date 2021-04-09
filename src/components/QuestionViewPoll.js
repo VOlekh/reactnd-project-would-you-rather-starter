@@ -7,6 +7,7 @@ import { Redirect } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Media from "react-bootstrap/Media";
+import Redirector from "./Redirector";
 
 class QuestionViewPoll extends Component {
 
@@ -49,6 +50,7 @@ class QuestionViewPoll extends Component {
 
     return (
             <Card>
+              <Redirector currentLocation="/questions/:question_id"/>
               <Card.Body>
                 <h4 className="center">View Poll</h4>
                   <div>

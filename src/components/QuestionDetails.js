@@ -10,6 +10,7 @@ import Media from "react-bootstrap/Media";
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import Redirector from "./Redirector";
 
 class QuestionDetails extends Component {
 
@@ -30,6 +31,7 @@ class QuestionDetails extends Component {
     
         return (  
             <Card>
+                <Redirector currentLocation="/questions/:question_id"/>
                 <Card.Body>
                 <h4 className="center">Question Details</h4>
                 <div>

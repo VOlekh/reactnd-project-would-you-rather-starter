@@ -47,7 +47,7 @@ class App extends Component {
             {/* {this.props.loading === true ? null : this.props.authedUser === null*/}
             {this.props.authedUser === null ? (
               <div>
-                <Redirect path='/logout' to='/' />
+                {/* <Redirect path='/logout' to='/' /> */}
                 <Route component={Login} />
               </div>
             ) : (

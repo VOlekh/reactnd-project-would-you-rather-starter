@@ -5,6 +5,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Card from "react-bootstrap/Card";
 import { Redirect } from "react-router-dom";
+import Redirector from "./Redirector";
 
 class QuestionNew extends Component {
   state = {
@@ -51,6 +52,7 @@ class QuestionNew extends Component {
   render() {
     return (
       <div>
+        <Redirector currentLocation="/new"/>
         <Card>
           <Card.Body>
             <h4 className="center">Compose new Question</h4>

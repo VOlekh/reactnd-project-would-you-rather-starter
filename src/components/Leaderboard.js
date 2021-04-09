@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import Card from "react-bootstrap/Card";
 import Media from "react-bootstrap/Media";
+import Redirector from "./Redirector";
 
 class Leaderboard extends Component {
   render() {
@@ -19,6 +20,7 @@ class Leaderboard extends Component {
     // console.log("scoreQustions:", scoreQustions )
     return (
       <div className="leaderboard">
+        <Redirector currentLocation="/leaderboard"/>
         <ul className="leaderbord_list">
           {users.map((user) => (
             <Card className="leaderboard-list" key={user.id}>

@@ -6,6 +6,7 @@ import Tab from "react-bootstrap/Tabs";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import {Link} from 'react-router-dom'
+import Redirector from "./Redirector";
 
 
 class Dashboard extends Component {
@@ -23,6 +24,7 @@ handleTab = (e) => {
 
     return (
       <div className="dashboard">
+         <Redirector currentLocation="/"/>
         <Tabs defaultActiveKey="profile" id="HomePage"   activeKey={this.state.defaultTab}
                 onSelect={this.handleTab}>
           <Tab  htmlFor="Unanswered" eventKey="Unanswered" title="Unanswered questions">
