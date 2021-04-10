@@ -16,8 +16,8 @@ import Logout from "./Logout";
 import QuestionRoute from "./QuestionRoute";
 import PageNotFound from "./PageNotFound";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
-import LoadingBar from "react-redux-loading";
+//import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+//import LoadingBar from "react-redux-loading";
 import banner from "../img/draw-banner-background-cute-cats-yellow.png"
 import { faFacebook, faLinkedinIn, faTwitter } from "@fortawesome/free-brands-svg-icons";
 //https://www.shutterstock.com/image-vector/cat-set-popcorn-french-fries-soda-1818755765
@@ -54,7 +54,7 @@ class App extends Component {
               <Switch>
                 <Route path="/" exact component={Dashboard} />
                 <Route path="/login" exact component={Login} />
-                <Route path="/new" component={QuestionNew} />
+                <Route path="/add" component={QuestionNew} />
                 <Route path="/leaderboard" component={Leaderboard} />
                 <Route path="/logout" component={Logout} />
                 <Route

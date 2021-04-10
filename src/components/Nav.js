@@ -19,7 +19,7 @@ class  NavComponent extends Component {
               <Navbar.Collapse id="justify-content-end">
                 <Nav className="mr-auto">
                   <NavLink to="/" exact activeClassName="active-nav" className="nav-link">Home</NavLink>
-                  <NavLink to="/new" activeClassName="active-nav" className="nav-link">New Question</NavLink>
+                  <NavLink to="/add" activeClassName="active-nav" className="nav-link">New Question</NavLink>
                   <NavLink to="/leaderboard" activeClassName="active-nav"className="nav-link">Leaderboard</NavLink>
                   <NavLink to="/logout" activeClassName="active-nav"className="nav-link">Logout</NavLink>
                 </Nav> 
