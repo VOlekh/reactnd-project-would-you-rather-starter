@@ -11,6 +11,8 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Redirector from "./Redirector";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCheckCircle } from "@fortawesome/free-regular-svg-icons";
 
 class QuestionDetails extends Component {
 
@@ -50,22 +52,23 @@ class QuestionDetails extends Component {
                     </Media>
                     <hr/>
                     
-                    
-                    {this.props.authedUserAnswer === "optionOne"
-                        ? <Container>
-                            <h4>Would you rather {this.props.optionOneText}</h4>
-                            <Row><Col>The number of people who voted for that option:</Col> <Col className="col-text">{this.props.optionOneVote}</Col></Row>
-                            <Row><Col>The percentage of people who voted for that option: </Col> <Col className="col-text">{`${Math.round(this.props.optionOnePercentageVoted)}%`}</Col></Row>
-                            <div className= "progress-bar"><ProgressBar now={Math.round(this.props.optionOnePercentageVoted)} label={`${Math.round(this.props.optionOnePercentageVoted)}%`} /> </div>
-                        </Container>
+                  
+                    <Container id="optOne" className={this.props.authedUserAnswer === "optionOne" ? "opt-style" : ""}>
+                        <h4>{this.props.authedUserAnswer === "optionOne" ? <FontAwesomeIcon icon={faCheckCircle} size="x" />: ""} Would you rather {this.props.optionOneText}</h4>
+                        <Row><Col>The number of people who voted for that option:</Col> <Col className="col-text">{this.props.optionOneVote}</Col></Row>
+                        <Row><Col>The percentage of people who voted for that option: </Col> <Col className="col-text">{`${Math.round(this.props.optionOnePercentageVoted)}%`}</Col></Row>
+                        <div className= "progress-bar"><ProgressBar now={Math.round(this.props.optionOnePercentageVoted)} label={`${Math.round(this.props.optionOnePercentageVoted)}%`} /> </div>
+                    </Container>
 
-                        : <Container>
-                            <h4>Would you rather {this.props.optionTwoText}</h4>
-                            <Row><Col>The number of people who voted for that option:</Col> <Col className="col-text">{this.props.optionTwoVote}</Col></Row>
-                            <Row><Col>The percentage of people who voted for that option: </Col> <Col className="col-text">{`${Math.round(this.props.optionTwoPercentageVoted)}%`}</Col></Row>
-                            <div className= "progress-bar"><ProgressBar now={Math.round(this.props.optionTwoPercentageVoted)} label={`${Math.round(this.props.optionTwoPercentageVoted)}%`} /> </div>
-                        </Container>
-                    }
+                    <hr/>
+                    
+                    <Container id="optTwo" className={this.props.authedUserAnswer === "optionTwo" ? "opt-style" : ""}>
+                        <h4>{this.props.authedUserAnswer === "optionTwo" ? <FontAwesomeIcon icon={faCheckCircle} size="x" />: ""}Would you rather {this.props.optionTwoText}</h4>
+                        <Row><Col>The number of people who voted for that option:</Col> <Col className="col-text">{this.props.optionTwoVote}</Col></Row>
+                        <Row><Col>The percentage of people who voted for that option: </Col> <Col className="col-text">{`${Math.round(this.props.optionTwoPercentageVoted)}%`}</Col></Row>
+                        <div className= "progress-bar"><ProgressBar now={Math.round(this.props.optionTwoPercentageVoted)} label={`${Math.round(this.props.optionTwoPercentageVoted)}%`} /> </div>
+                    </Container>
+        
                    
             
                 </div>
