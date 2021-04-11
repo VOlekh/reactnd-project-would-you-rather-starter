@@ -31,7 +31,7 @@ Builds the app in production mode, go to the build folder, run:
     npm run build
    
 ## Design
-![image](img/WouldYouRather.gif)
+![image](src/img/WouldYouRather.gif)
 
 ## Views we need in our app
 - Home
