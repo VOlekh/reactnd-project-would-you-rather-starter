@@ -185,5 +185,16 @@ div.progress {
 
 }
 .opt-style{
-  background-color:#FFC830;
+  background-color: rgb(241, 196, 98);
+}
+
+ul.social-network {
+	list-style: none;
+	display: inline;
+	margin-left:0 !important;
+	padding: 0;
+}
+ul.social-network li {
+	display: inline;
+	margin: 0 5px;
 }
