@@ -16,14 +16,6 @@ import { faCheckCircle } from "@fortawesome/free-regular-svg-icons";
 
 class QuestionDetails extends Component {
 
-    // optionOnepercentageVoted = 60;
-    // progressInstanceVoted = <ProgressBar optionOnepercentageVoted={percentageVoted} label={`${optionOnepercentageVoted}%`} />;
-    // render(progressInstanceVoted);
-    //   the text of the option;
-    //                     the number of people who voted for that option;
-    //                     the percentage of people who voted for that option.
-    //all users -100%
-
     render() {
         const { question, authedUser } = this.props;
         console.log(authedUser);
@@ -37,6 +29,7 @@ class QuestionDetails extends Component {
                 <Card.Body>
                 <h4 className="center">Question Details</h4>
                 <div>
+
                     <Media>
                         <img
                             width={64}
@@ -50,8 +43,8 @@ class QuestionDetails extends Component {
                             <p>{formatDate(timestamp)}</p>
                         </Media.Body>
                     </Media>
+
                     <hr/>
-                    
                   
                     <Container id="optOne" className={this.props.authedUserAnswer === "optionOne" ? "opt-style" : ""}>
                         <h4>{this.props.authedUserAnswer === "optionOne" ? <FontAwesomeIcon icon={faCheckCircle} size="x" />: ""} Would you rather {this.props.optionOneText}</h4>
@@ -69,8 +62,6 @@ class QuestionDetails extends Component {
                         <div className= "progress-bar"><ProgressBar now={Math.round(this.props.optionTwoPercentageVoted)} label={`${Math.round(this.props.optionTwoPercentageVoted)}%`} /> </div>
                     </Container>
         
-                   
-            
                 </div>
               </Card.Body>
           
@@ -125,4 +116,3 @@ class QuestionDetails extends Component {
     }
     
     export default connect(mapStateToProps)(QuestionDetails);
-    

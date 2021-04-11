@@ -52,7 +52,8 @@ class Login extends Component {
               </Form.Control>
             </Form.Group>
 
-            {/* <Form.Group controlId="formBasicPassword">
+            {/*TBD
+             <Form.Group controlId="formBasicPassword">
                 <Form.Label>Password</Form.Label>
                   <Form.Control type="password" placeholder="Password" />
               </Form.Group> */}

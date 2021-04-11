@@ -2,8 +2,6 @@ import React, {Fragment} from 'react'
 import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 
-
-
 class Redirector extends React.Component {
 
   render() {
@@ -29,7 +27,5 @@ function mapStateToProps({ authedUser }) {
     authedUser,
   };
 }
-
-
 
 export default connect(mapStateToProps)(Redirector);

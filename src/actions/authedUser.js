@@ -1,8 +1,6 @@
 import { checkLogin } from '../utils/api'
 export const SET_AUTHED_USER = 'SET_AUTHED_USER'
 
-
-
 export function setAuthedUser(id) {
     console.log('SetUser', id)
     return{
@@ -10,9 +8,6 @@ export function setAuthedUser(id) {
         id
     }
 }
-
-
-
 
 export function handleLogin(authedUser) {
     console.log(authedUser);

@@ -24,9 +24,9 @@ handleTab = (e) => {
 
     return (
       <div className="dashboard">
-         <Redirector currentLocation="/"/>
-        <Tabs defaultActiveKey="profile" id="HomePage"   activeKey={this.state.defaultTab}
-                onSelect={this.handleTab}>
+        <Redirector currentLocation="/"/>
+        <Tabs defaultActiveKey="profile" id="HomePage"   activeKey={this.state.defaultTab} onSelect={this.handleTab}>
+
           <Tab  htmlFor="Unanswered" eventKey="Unanswered" title="Unanswered questions">
             <div label="Unanswered">
               <ul className="questions-List">
@@ -71,9 +71,8 @@ handleTab = (e) => {
   }
 }
 
-{
-  /* // take a state of our store { questions } */
-}
+
+/* take a state of our store { questions } */
 function mapStateToProps({ questions, authedUser }, { id }) {
   const question = questions[id];
 
@@ -90,8 +89,8 @@ function mapStateToProps({ questions, authedUser }, { id }) {
   const unansweredQuestions = Object.values(questions).filter(
     (question) => !answeredQuestions.includes(question)
   );
-  // questions are sorted by time
 
+  // questions are sorted by time
   return {
     id,
     unansweredQuestionIds: unansweredQuestions
