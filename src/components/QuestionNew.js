@@ -5,6 +5,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Card from "react-bootstrap/Card";
 import Redirector from "./Redirector";
+import { Redirect } from "react-router-dom";
 
 class QuestionNew extends Component {
   state = {
@@ -29,7 +30,7 @@ class QuestionNew extends Component {
     e.preventDefault();
     // add Question to Store
     const { optionOneText, optionTwoText } = this.state;
-    const { dispatch, id, authedUser } = this.props;
+    const { dispatch, authedUser } = this.props;
 
     console.log("New question: ", optionOneText, optionTwoText);
 
@@ -41,59 +42,60 @@ class QuestionNew extends Component {
     this.setState(() => ({
       optionOneText: "",
       optionTwoText: "",
-      // author: authedUser
-      //this.setState(()=>({toHome:true}))
+      toHome: true,
     }));
   };
 
-  // if id is a thing, then toHome is false, if not - true
-  //toHome: id ? false : true,
   render() {
-    return (
-      <div>
-        <Redirector currentLocation="/add"/>
-        <Card>
-          <Card.Body>
-            <h4 className="center">Compose new Question</h4>
-            <h4>Would you rather ...</h4>
-            <Form>
-              <Form.Group controlId="OptionOne">
-                <Form.Label>Option one</Form.Label>
-                <Form.Control
-                  type="text"
-                  onChange={this.onOptionOneChange}
-                  className="textarea"
-                  maxLength={200}
-                  placeholder="Would you.. "
-                />
-              </Form.Group>
-              <Form.Group controlId="OptionTwo">
-                <Form.Label>Option two</Form.Label>
-                <Form.Control
-                  type="text"
-                  onChange={this.onOptionTwoChange}
-                  className="textarea"
-                  maxLength={200}
-                  placeholder="Would you rather.. "
-                />
-              </Form.Group>
-            </Form>
-          </Card.Body>
-          <Button
-            variant="warning"
-            onClick={this.onNewQuestionSubmit}
-            type="submit"
-            disabled={
-              this.state.optionOneText === "" || this.state.optionTwoText === ""
-            }
-          >
-            Submit
-          </Button>
-        </Card>
-      </div>
-    );
+    if (this.state.toHome) {
+      return <Redirect to="/" />;
+    }
+      return (
+        <div>
+          <Redirector currentLocation="/add" />
+
+          <Card>
+            <Card.Body>
+              <h4 className="center">Compose new Question</h4>
+              <h4>Would you rather ...</h4>
+              <Form>
+                <Form.Group controlId="OptionOne">
+                  <Form.Label>Option one</Form.Label>
+                  <Form.Control
+                    type="text"
+                    onChange={this.onOptionOneChange}
+                    className="textarea"
+                    maxLength={200}
+                    placeholder="Would you.. "
+                  />
+                </Form.Group>
+                <Form.Group controlId="OptionTwo">
+                  <Form.Label>Option two</Form.Label>
+                  <Form.Control
+                    type="text"
+                    onChange={this.onOptionTwoChange}
+                    className="textarea"
+                    maxLength={200}
+                    placeholder="Would you rather.. "
+                  />
+                </Form.Group>
+              </Form>
+            </Card.Body>
+            <Button
+              variant="warning"
+              onClick={this.onNewQuestionSubmit}
+              type="submit"
+              disabled={
+                this.state.optionOneText === "" || this.state.optionTwoText === ""
+              }
+            >
+              Submit
+            </Button>
+          </Card>
+        </div>
+      );
+    }
   }
-}
 
 function mapStateToProps({ users, authedUser }) {
   return {
