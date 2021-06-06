@@ -15,17 +15,14 @@ This project solidify understanding of React and Redux. Practice:
 
 # Starter code and Student's code 
 
-This is the starter code for the final assessment project for Udacity's React & Redux course.
+Project has starter code:
+https://github.com/udacity/reactnd-project-would-you-rather-starter
 
 For this application, most of the application’s state are managed by Redux.
 There are no direct API calls in components’ lifecycle methods, and updates are triggered by dispatching action creators. Student use component state to handle form input fields and controlled components.The rest of the state for application is controlled by reducers.
 
 The `_DATA.js` file represents a fake database and methods that let you access the data. The only thing was edited in the ` _DATA.js` file is the value of `avatarURL`. Each user have an avatar, need to add the path to each user’s avatar.
 
-Using the provided starter code, Student build a React/Redux front end for the application. We recommend using the [Create React App](https://github.com/facebook/create-react-app) to bootstrap the project.
-
-use source to plan project 
-https://redux.js.org/tutorials/fundamentals/part-3-state-actions-reducers
 
 ## Install and Start
 
