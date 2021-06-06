@@ -4,7 +4,11 @@
 User is be able to answer questions, see which questions they haven’t answered, see how other people have voted, post questions, and see the ranking of users on the leaderboard.
 
 # Why this project?
-This project solidify your understanding of React and Redux while giving you a chance to express your creativity. Practice improving the predictability of application’s state; establish strict rules for getting, listening, and updating the store; and identify what state should live inside of Redux and what state should live inside of React components.
+This project solidify your understanding of React and Redux. Practice:
+- improving the predictability of application’s state; 
+- establish strict rules for getting,
+- listening, and updating the store; 
+- identify what state should live inside of Redux and what state should live inside of React components.
 
 ## Design
 ![image](src/img/WouldYouRather.gif)
