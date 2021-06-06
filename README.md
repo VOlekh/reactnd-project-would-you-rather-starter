@@ -4,7 +4,7 @@
 User is be able to answer questions, see which questions they haven’t answered, see how other people have voted, post questions, and see the ranking of users on the leaderboard.
 
 # Why this project?
-This project solidify your understanding of React and Redux. Practice:
+This project solidify understanding of React and Redux. Practice:
 - improving the predictability of application’s state; 
 - establish strict rules for getting,
 - listening, and updating the store; 
