@@ -5,9 +5,8 @@ User is able to answer questions, see which questions they haven’t answered, s
 
 # Why this project?
 This project solidify understanding of React and Redux. Practice:
-- improving the predictability of application’s state; 
-- establish strict rules for getting,
-- listening, and updating the store; 
+- improves the predictability of application’s state; 
+- establish strict rules for getting, listening, and updating the store; 
 - identify what state should live inside of Redux and what state should live inside of React components.
 
 ## Design
